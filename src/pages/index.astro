@@ -1,0 +1,493 @@
+---
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AMP 210 Reunion — Istanbul, October 22–25, 2026. Harvard Business School Advanced Management Program 210." />
+  <title>AMP 210 · Istanbul Reunion 2026</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body class="antialiased">
+
+  <!-- NAV -->
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background: transparent;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
+      <a href="#top" class="text-white font-semibold tracking-widest text-sm uppercase opacity-90 hover:opacity-100 transition-opacity" style="font-family: 'Inter', sans-serif;">
+        AMP <span style="color: #e8a0a8;">210</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-white text-xs tracking-wider uppercase opacity-80">
+        <a href="#about" class="hover:opacity-100 transition-opacity">About</a>
+        <a href="#itinerary" class="hover:opacity-100 transition-opacity">Itinerary</a>
+        <a href="#travel" class="hover:opacity-100 transition-opacity">Travel</a>
+        <a href="#rsvp" class="px-5 py-2 border border-white/60 hover:bg-white hover:text-[#1C1C1C] transition-all duration-200 text-white tracking-widest">
+          RSVP
+        </a>
+      </div>
+      <a href="#rsvp" class="md:hidden text-white text-xs tracking-widest uppercase border border-white/60 px-4 py-1.5">RSVP</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-end" style="background: #1C1C1C;">
+    <div class="absolute inset-0 overflow-hidden">
+      <img
+        src="/assets/class-photo.jpg"
+        alt="AMP 210 Class Photo"
+        class="w-full h-full object-cover object-top opacity-60"
+        onerror="this.style.display='none'"
+      />
+      <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(28,28,28,0.3) 0%, rgba(28,28,28,0.1) 40%, rgba(28,28,28,0.7) 80%, rgba(28,28,28,0.95) 100%);"></div>
+    </div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 pb-20 lg:pb-28">
+      <p class="section-label mb-5" style="color: rgba(255,255,255,0.5);">Harvard Business School</p>
+      <h1 class="text-white leading-tight mb-4" style="font-family: 'EB Garamond', Georgia, serif; font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 400;">
+        AMP 210
+      </h1>
+      <p class="text-white/80 mb-3" style="font-family: 'EB Garamond', Georgia, serif; font-size: clamp(1.2rem, 2.5vw, 1.75rem); font-style: italic;">
+        Reunion — Istanbul, October 22–25, 2026
+      </p>
+      <p class="text-white/50 text-sm tracking-wide mb-10">142 classmates · 43 countries · one reunion</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#rsvp" class="inline-block px-8 py-4 text-white text-sm tracking-widest uppercase font-medium transition-all duration-200 hover:opacity-90 text-center" style="background: #A51C30;">
+          Register Now
+        </a>
+        <a href="#itinerary" class="inline-block px-8 py-4 text-white text-sm tracking-widest uppercase border border-white/40 hover:border-white/80 transition-all duration-200 text-center">
+          View Programme
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-40">
+      <div class="w-px h-12 bg-white animate-pulse"></div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <section style="background: #A51C30;" class="py-10 lg:py-12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-white text-center">
+        <div>
+          <div class="text-4xl lg:text-5xl mb-1" style="font-family: 'EB Garamond', Georgia, serif;">142</div>
+          <div class="text-xs tracking-widest uppercase opacity-70">Classmates</div>
+        </div>
+        <div>
+          <div class="text-4xl lg:text-5xl mb-1" style="font-family: 'EB Garamond', Georgia, serif;">43</div>
+          <div class="text-xs tracking-widest uppercase opacity-70">Countries</div>
+        </div>
+        <div>
+          <div class="text-4xl lg:text-5xl mb-1" style="font-family: 'EB Garamond', Georgia, serif;">20+</div>
+          <div class="text-xs tracking-widest uppercase opacity-70">Mini Reunions</div>
+        </div>
+        <div>
+          <div class="text-4xl lg:text-5xl mb-1" style="font-family: 'EB Garamond', Georgia, serif;">1<span class="text-2xl">st</span></div>
+          <div class="text-xs tracking-widest uppercase opacity-70">Official Reunion</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24 lg:py-32" style="background: #F8F7F4;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div>
+          <p class="section-label mb-4">About the Reunion</p>
+          <div class="divider"></div>
+          <h2 class="text-4xl lg:text-5xl leading-tight mb-6" style="font-family: 'EB Garamond', Georgia, serif; font-weight: 400;">
+            We never really<br /><em>left each other.</em>
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-5 text-base lg:text-lg">
+            Over 20 mini reunions since graduation across NYC, Singapore, Johannesburg, Rome, London, Copenhagen, Mumbai, Hong Kong, Helsinki, Brussels, Melbourne, Brazil and counting.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-8 text-base lg:text-lg">
+            This October, we come together for our first official reunion — four days in Istanbul to reconnect, reflect, and carry forward the magic that made AMP 210 special.
+          </p>
+          <blockquote class="border-l-2 pl-6" style="border-color: #A51C30;">
+            <p class="text-gray-500 leading-relaxed" style="font-family: 'EB Garamond', Georgia, serif; font-size: 1.15rem; font-style: italic;">
+              "The goal isn't to recreate AMP. It's to carry forward the magic of what made it special."
+            </p>
+            <cite class="not-italic text-xs tracking-wider uppercase text-gray-400 mt-3 block">Ripple Bhullar, Sonal Gandhi, Steve Wong & Zach Leifer — Reunion Committee</cite>
+          </blockquote>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/5] overflow-hidden relative" style="background: #1C1C1C;">
+            <img src="/assets/class-photo.jpg" alt="AMP 210 Class Photo" class="w-full h-full object-cover object-top" />
+            <div class="absolute bottom-0 left-0 right-0 p-6" style="background: linear-gradient(to top, rgba(165,28,48,0.85), transparent);">
+              <p class="text-white text-sm tracking-widest uppercase">AMP 210 · Harvard Business School</p>
+              <p class="text-white/70 text-xs mt-1">February 15 – May 1, 2026</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ISTANBUL -->
+  <section class="py-24 lg:py-32" style="background: #fff;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Why Istanbul</p>
+        <div class="divider mx-auto"></div>
+        <h2 class="text-4xl lg:text-5xl mt-2" style="font-family: 'EB Garamond', Georgia, serif; font-weight: 400;">
+          Access, cost, community<br />and connectivity.
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="p-8 border border-gray-100 hover:border-red-200 transition-colors">
+          <div class="text-3xl font-light mb-3" style="color: #A51C30; font-family: 'EB Garamond', Georgia, serif;">~90%</div>
+          <h3 class="font-semibold text-sm tracking-wide uppercase mb-2 text-gray-800">Visa-Free Access</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Nearly the entire class can enter visa-free or e-visa, including India, Nigeria, South Africa, China, Brazil, LATAM and UAE.</p>
+        </div>
+        <div class="p-8 border border-gray-100 hover:border-red-200 transition-colors">
+          <div class="text-3xl font-light mb-3" style="color: #A51C30; font-family: 'EB Garamond', Georgia, serif;">4</div>
+          <h3 class="font-semibold text-sm tracking-wide uppercase mb-2 text-gray-800">Local Members</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Murat, Onur, Melis and Caner are based in Istanbul and provide local support, expertise and community.</p>
+        </div>
+        <div class="p-8 border border-gray-100 hover:border-red-200 transition-colors">
+          <div class="text-3xl font-light mb-3" style="color: #A51C30; font-family: 'EB Garamond', Georgia, serif;">✈</div>
+          <h3 class="font-semibold text-sm tracking-wide uppercase mb-2 text-gray-800">Direct Everywhere</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Turkish Airlines hub with direct flights from SIN, SYD, JFK, LHR, DXB, GRU, NBO, BOM, JNB and all major member cities.</p>
+        </div>
+        <div class="p-8 border border-gray-100 hover:border-red-200 transition-colors">
+          <div class="text-3xl font-light mb-3" style="color: #A51C30; font-family: 'EB Garamond', Georgia, serif;">$</div>
+          <h3 class="font-semibold text-sm tracking-wide uppercase mb-2 text-gray-800">Best Value</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Lowest all-in cost versus other alternatives considered. Istanbul has hosted many successful AMP reunions before.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ITINERARY -->
+  <section id="itinerary" class="py-24 lg:py-32" style="background: #1C1C1C;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4" style="color: #e8a0a8;">Programme</p>
+        <div class="divider mx-auto"></div>
+        <h2 class="text-4xl lg:text-5xl mt-2 text-white" style="font-family: 'EB Garamond', Georgia, serif; font-weight: 400;">
+          Four days in Istanbul
+        </h2>
+        <p class="text-gray-400 mt-3 text-sm tracking-wide">Blending LG catch-ups, academic sessions and social experiences</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px" style="background: #333;">
+        <div style="background: #1C1C1C;" class="p-8 lg:p-10">
+          <div class="text-xs tracking-widest uppercase mb-1" style="color: #A51C30;">Thursday</div>
+          <div class="text-white text-lg font-medium mb-1" style="font-family: 'EB Garamond', Georgia, serif;">October 22</div>
+          <div class="text-white/40 text-xs tracking-widest uppercase mb-6">Day 1 · Arrivals</div>
+          <ul class="space-y-3">
+            <li class="text-gray-400 text-sm leading-relaxed">Check-in & welcome desk on-site</li>
+            <li class="text-gray-400 text-sm leading-relaxed">Welcome drinks at hotel</li>
+            <li class="text-gray-400 text-sm leading-relaxed">LG reunion dinners</li>
+            <li class="text-gray-400 text-sm leading-relaxed">After dinner drinks</li>
+          </ul>
+        </div>
+        <div class="p-8 lg:p-10" style="background: #A51C30;">
+          <div class="text-xs tracking-widest uppercase mb-1 text-white/60">Friday</div>
+          <div class="text-white text-lg font-medium mb-1" style="font-family: 'EB Garamond', Georgia, serif;">October 23</div>
+          <div class="text-white/60 text-xs tracking-widest uppercase mb-6">Day 2 · Academic Day</div>
+          <ul class="space-y-3">
+            <li class="text-white/80 text-sm leading-relaxed">Brian Hall keynote session</li>
+            <li class="text-white/80 text-sm leading-relaxed">Sunil Gupta keynote session</li>
+            <li class="text-white/80 text-sm leading-relaxed">Leadership & networking session</li>
+            <li class="text-white/80 text-sm leading-relaxed">Evening Bosphorus Cruise & Dinner</li>
+          </ul>
+        </div>
+        <div style="background: #1C1C1C;" class="p-8 lg:p-10">
+          <div class="text-xs tracking-widest uppercase mb-1" style="color: #A51C30;">Saturday</div>
+          <div class="text-white text-lg font-medium mb-1" style="font-family: 'EB Garamond', Georgia, serif;">October 24</div>
+          <div class="text-white/40 text-xs tracking-widest uppercase mb-6">Day 3 · Social Day</div>
+          <ul class="space-y-3">
+            <li class="text-gray-400 text-sm leading-relaxed">Topkapi Palace & Hagia Sophia</li>
+            <li class="text-gray-400 text-sm leading-relaxed">Blue Mosque & Grand Bazaar</li>
+            <li class="text-gray-400 text-sm leading-relaxed">Historical Istanbul tour</li>
+            <li class="text-gray-400 text-sm leading-relaxed">Evening dinner</li>
+          </ul>
+        </div>
+        <div style="background: #1C1C1C;" class="p-8 lg:p-10">
+          <div class="text-xs tracking-widest uppercase mb-1" style="color: #A51C30;">Sunday</div>
+          <div class="text-white text-lg font-medium mb-1" style="font-family: 'EB Garamond', Georgia, serif;">October 25</div>
+          <div class="text-white/40 text-xs tracking-widest uppercase mb-6">Day 4 · Departures</div>
+          <ul class="space-y-3">
+            <li class="text-gray-400 text-sm leading-relaxed">Farewell breakfast</li>
+            <li class="text-gray-400 text-sm leading-relaxed">Optional tours</li>
+            <li class="text-gray-400 text-sm leading-relaxed">Check-out & airport transfers</li>
+          </ul>
+          <div class="mt-6 pt-6 border-t border-gray-800">
+            <p class="text-gray-500 text-xs leading-relaxed">Partners welcome to all events except the Friday academic sessions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 p-8 lg:p-10 border border-gray-800 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="section-label mb-3" style="color: #e8a0a8;">Faculty Confirmed</p>
+          <h3 class="text-white text-3xl mb-4" style="font-family: 'EB Garamond', Georgia, serif; font-weight: 400;">Brian Hall & Sunil Gupta</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Both professors will attend and run academic case sessions, maximising the learning experience and workplace contribution to the trip.</p>
+        </div>
+        <div class="text-gray-500 text-sm leading-relaxed">
+          <p class="mb-3">Airfares for faculty and their guests are covered in full by Turkish Airlines. Accommodation and event participation costs will be evenly split amongst the class.</p>
+          <p class="text-gray-600 italic" style="font-family: 'EB Garamond', Georgia, serif; font-size: 1.1rem;">Who's ready to get better?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TURKISH AIRLINES -->
+  <section id="travel" class="py-24 lg:py-32" style="background: #F8F7F4;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+        <div>
+          <p class="section-label mb-4">Travel</p>
+          <div class="divider"></div>
+          <h2 class="text-4xl lg:text-5xl leading-tight mt-2 mb-6" style="font-family: 'EB Garamond', Georgia, serif; font-weight: 400;">
+            Turkish Airlines<br />exclusive discount
+          </h2>
+          <p class="text-gray-500 text-sm leading-relaxed mb-8">Open to the full AMP 210 cohort and partners. Use the promo code at checkout on the Turkish Airlines website.</p>
+
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <div class="p-6 bg-white border border-gray-100">
+              <div class="text-3xl mb-2" style="color: #A51C30; font-family: 'EB Garamond', Georgia, serif;">25%</div>
+              <div class="text-xs tracking-widest uppercase text-gray-500">Economy Class</div>
+            </div>
+            <div class="p-6 bg-white border border-gray-100">
+              <div class="text-3xl mb-2" style="color: #A51C30; font-family: 'EB Garamond', Georgia, serif;">20%</div>
+              <div class="text-xs tracking-widest uppercase text-gray-500">Business Class</div>
+            </div>
+          </div>
+
+          <div class="p-6 border-l-2 mb-6" style="border-color: #A51C30; background: white;">
+            <div class="text-xs tracking-widest uppercase text-gray-400 mb-1">Promo Code</div>
+            <div class="text-2xl font-semibold tracking-widest" style="color: #A51C30;">AMP210IST</div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4 text-sm text-gray-500">
+            <div><span class="text-gray-400 text-xs uppercase tracking-wider block mb-1">Book by</span>Jul 1 – Oct 15, 2026</div>
+            <div><span class="text-gray-400 text-xs uppercase tracking-wider block mb-1">Travel dates</span>Oct 18 – 28, 2026</div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold tracking-widest uppercase text-gray-400 mb-6">Approved Departure Points</h3>
+          <div class="space-y-3">
+            {[
+              { region: "United States", cities: "BOS, JFK, EWR, IAD, ORD, LAX, SFO, ATL, MIA, IAH, SEA, DFW, DEN, PHX, SAN, PHL" },
+              { region: "Canada", cities: "YYZ, YVR, YUL, YEG, YSJ" },
+              { region: "Latin America", cities: "MEX, BOG, LIM, SCL, EZE, PTY, GRU, BSB" },
+              { region: "Europe", cities: "LHR, LGW, CDG, AMS, FRA, MUC, ZRH, VIE, MAD, BCN, FCO, BER, BRU, DUB, HEL" },
+              { region: "Middle East", cities: "DXB, AUH, SHJ, DOH, KWI, RUH, JED, AMM, BEY, TLV" },
+              { region: "Africa", cities: "CAI, NBO, ADD, ACC, DAR, LOS, ABV, JNB, CPT, CMN" },
+              { region: "South Asia", cities: "DEL, BOM, HYD, BLR, CCU, ISB, LHE" },
+              { region: "East & SE Asia", cities: "PEK, PVG, HKG, ICN, NRT, SIN, KUL, BKK, CGK" },
+              { region: "Oceania", cities: "SYD, MEL, PER, AKL" },
+            ].map(({ region, cities }) => (
+              <div class="flex gap-4 text-sm py-3 border-b border-gray-200">
+                <div class="w-36 shrink-0 text-gray-700 font-medium text-xs uppercase tracking-wide">{region}</div>
+                <div class="text-gray-400 text-xs leading-relaxed">{cities}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp" class="py-24 lg:py-32" style="background: #fff;">
+    <div class="max-w-2xl mx-auto px-6 lg:px-10">
+      <div class="text-center mb-12">
+        <p class="section-label mb-4">Register</p>
+        <div class="divider mx-auto"></div>
+        <h2 class="text-4xl lg:text-5xl leading-tight mt-2 mb-4" style="font-family: 'EB Garamond', Georgia, serif; font-weight: 400;">
+          Reserve your place<br />in Istanbul
+        </h2>
+        <p class="text-gray-500 text-base leading-relaxed">
+          Please commit by <strong class="text-gray-800">Thursday, July 17</strong> so we can confirm headcount and finalize the package.
+        </p>
+        <p class="text-gray-400 text-sm mt-2">Partners welcome to all events except Friday academic sessions.</p>
+      </div>
+
+      <form id="rsvp-form" class="space-y-6">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-semibold tracking-widest uppercase text-gray-500 mb-2">First Name *</label>
+            <input type="text" name="firstName" required placeholder="First name"
+              class="w-full border border-gray-200 px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-gray-400 transition-colors" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold tracking-widest uppercase text-gray-500 mb-2">Last Name *</label>
+            <input type="text" name="lastName" required placeholder="Last name"
+              class="w-full border border-gray-200 px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-gray-400 transition-colors" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold tracking-widest uppercase text-gray-500 mb-2">Email *</label>
+          <input type="email" name="email" required placeholder="your@email.com"
+            class="w-full border border-gray-200 px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-gray-400 transition-colors" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold tracking-widest uppercase text-gray-500 mb-3">I am attending *</label>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label id="opt-solo" class="rsvp-option flex items-start gap-4 border border-gray-200 p-5 cursor-pointer transition-all hover:border-gray-400" onclick="selectOption('solo')">
+              <div class="rsvp-radio w-4 h-4 mt-0.5 rounded-full border-2 border-gray-300 shrink-0 transition-all"></div>
+              <div>
+                <div class="text-sm font-semibold text-gray-800 mb-1">Yes, I'm in</div>
+                <div class="text-xs text-gray-400 leading-relaxed">Just me — Oct 22–25</div>
+              </div>
+            </label>
+            <label id="opt-plus1" class="rsvp-option flex items-start gap-4 border border-gray-200 p-5 cursor-pointer transition-all hover:border-gray-400" onclick="selectOption('plus1')">
+              <div class="rsvp-radio w-4 h-4 mt-0.5 rounded-full border-2 border-gray-300 shrink-0 transition-all"></div>
+              <div>
+                <div class="text-sm font-semibold text-gray-800 mb-1">Yes, me + partner</div>
+                <div class="text-xs text-gray-400 leading-relaxed">Partners join all events except Friday academics</div>
+              </div>
+            </label>
+          </div>
+          <input type="hidden" name="attendance" id="attendance-input" />
+        </div>
+
+        <div id="partner-name-field" class="hidden">
+          <label class="block text-xs font-semibold tracking-widest uppercase text-gray-500 mb-2">Partner's Name</label>
+          <input type="text" name="partnerName" placeholder="Partner's full name"
+            class="w-full border border-gray-200 px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-gray-400 transition-colors" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold tracking-widest uppercase text-gray-500 mb-2">Anything else? <span class="text-gray-300 font-normal normal-case tracking-normal">Optional</span></label>
+          <textarea name="notes" rows="3" placeholder="Questions, dietary requirements, or anything we should know..."
+            class="w-full border border-gray-200 px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-gray-400 transition-colors resize-none"></textarea>
+        </div>
+
+        <div id="rsvp-error" class="hidden text-sm text-red-600 py-2">Please fill in all required fields and select your attendance option.</div>
+
+        <button type="submit" id="rsvp-submit"
+          class="w-full py-4 text-white text-sm tracking-widest uppercase font-medium transition-all duration-200 hover:opacity-90"
+          style="background: #A51C30;">
+          Confirm My Place
+        </button>
+      </form>
+
+      <!-- Success state -->
+      <div id="rsvp-success" class="hidden text-center py-16">
+        <div class="text-5xl mb-6" style="font-family: 'EB Garamond', Georgia, serif; color: #A51C30;">✓</div>
+        <h3 class="text-2xl mb-3" style="font-family: 'EB Garamond', Georgia, serif;">You're confirmed!</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">We'll be in touch with package details and costs shortly.<br />See you in Istanbul. 🇹🇷</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function selectOption(val) {
+      document.getElementById('attendance-input').value = val;
+      ['solo','plus1'].forEach(id => {
+        const el = document.getElementById('opt-' + id);
+        const radio = el.querySelector('.rsvp-radio');
+        if (id === val) {
+          el.style.borderColor = '#A51C30';
+          el.style.background = '#fff8f8';
+          radio.style.borderColor = '#A51C30';
+          radio.style.background = '#A51C30';
+        } else {
+          el.style.borderColor = '#e5e7eb';
+          el.style.background = '';
+          radio.style.borderColor = '#d1d5db';
+          radio.style.background = '';
+        }
+      });
+      document.getElementById('partner-name-field').classList.toggle('hidden', val !== 'plus1');
+    }
+
+    document.getElementById('rsvp-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const attendance = document.getElementById('attendance-input').value;
+      if (!attendance) {
+        document.getElementById('rsvp-error').classList.remove('hidden');
+        return;
+      }
+      document.getElementById('rsvp-error').classList.add('hidden');
+      const btn = document.getElementById('rsvp-submit');
+      btn.textContent = 'Submitting...';
+      btn.disabled = true;
+
+      const data = {
+        firstName: form.firstName.value,
+        lastName: form.lastName.value,
+        email: form.email.value,
+        attendance,
+        partnerName: form.partnerName?.value || '',
+        notes: form.notes.value,
+        submittedAt: new Date().toISOString(),
+      };
+
+      try {
+        const res = await fetch('/api/rsvp', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        if (res.ok) {
+          form.classList.add('hidden');
+          document.getElementById('rsvp-success').classList.remove('hidden');
+        } else {
+          throw new Error('Server error');
+        }
+      } catch {
+        // Fallback: mailto if API not set up
+        const subject = encodeURIComponent('AMP 210 Reunion RSVP');
+        const body = encodeURIComponent(`Name: ${data.firstName} ${data.lastName}\nEmail: ${data.email}\nAttending: ${data.attendance}\nPartner: ${data.partnerName}\nNotes: ${data.notes}`);
+        window.location.href = `mailto:zacharyleifer@gmail.com?subject=${subject}&body=${body}`;
+        btn.textContent = 'Confirm My Place';
+        btn.disabled = false;
+      }
+    });
+  </script>
+
+  <!-- FOOTER -->
+  <footer style="background: #1C1C1C;" class="py-16">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+        <div>
+          <div class="text-white text-lg tracking-widest uppercase mb-1" style="font-family: 'Inter', sans-serif; font-weight: 600;">
+            AMP <span style="color: #A51C30;">210</span>
+          </div>
+          <div class="text-gray-500 text-xs tracking-wider">Advanced Management Program · Harvard Business School</div>
+          <div class="text-gray-500 text-xs tracking-wider mt-1">February 15 – May 1, 2026</div>
+        </div>
+        <div class="md:text-right">
+          <div class="text-gray-400 text-xs mb-1">Reunion Committee</div>
+          <div class="text-gray-500 text-xs">Ripple Bhullar · Sonal Gandhi · Steve Wong · Zach Leifer</div>
+          <div class="mt-4">
+            <a href="#rsvp" class="text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors border-b border-white/20 pb-0.5">Register for Istanbul →</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-10 pt-8 text-gray-600 text-xs">
+        © 2026 AMP 210 · Istanbul Reunion · Private event for AMP 210 cohort members and partners
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        nav.style.background = 'rgba(28,28,28,0.97)';
+        nav.style.backdropFilter = 'blur(8px)';
+        nav.style.borderBottom = '1px solid rgba(255,255,255,0.08)';
+      } else {
+        nav.style.background = 'transparent';
+        nav.style.backdropFilter = 'none';
+        nav.style.borderBottom = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
