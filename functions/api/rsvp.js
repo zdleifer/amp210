@@ -9,7 +9,7 @@ export async function onRequestPost(context) {
       });
     }
 
-    const attendanceLabel = data.attendance === 'plus1' ? 'Yes, me + partner' : "Yes, I'm in";
+    const attendanceLabel = 'Yes, I am going';
 
     const airtableRes = await fetch(
       'https://api.airtable.com/v0/appIvQCZHBkJbOn0e/tbl5lGtohdFApVFeY',
