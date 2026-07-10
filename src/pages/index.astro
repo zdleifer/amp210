@@ -380,7 +380,7 @@ import '../styles/global.css';
     </div>
   </section>
 
-  <script>
+  <script is:inline>
     function selectOption(val) {
       document.getElementById('attendance-input').value = val;
       ['solo','plus1'].forEach(id => {
