@@ -9,7 +9,6 @@ export async function onRequestPost(context) {
       });
     }
 
-    const attendanceLabel = 'Yes, I am going';
 
     const airtableRes = await fetch(
       'https://api.airtable.com/v0/appIvQCZHBkJbOn0e/tbl5lGtohdFApVFeY',
@@ -24,7 +23,7 @@ export async function onRequestPost(context) {
             'First Name': data.firstName,
             'Last Name': data.lastName,
             'Email': data.email,
-            'Attendance': attendanceLabel,
+            'Attendance': true,
             'Partner Name': data.partnerName || '',
             'Notes': data.notes || '',
           },
