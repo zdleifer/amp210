@@ -330,7 +330,7 @@ import '../styles/global.css';
         </div>
 
         <div>
-          <label class="block text-xs font-semibold tracking-widest uppercase text-gray-500 mb-3">I am attending *</label>
+          <label class="block text-xs font-semibold tracking-widest uppercase text-gray-500 mb-3">Attendance Commitment *</label>
           <div class="grid sm:grid-cols-2 gap-4">
             <label id="opt-solo" class="rsvp-option flex items-start gap-4 border border-gray-200 p-5 cursor-pointer transition-all hover:border-gray-400" onclick="selectOption('solo')">
               <div class="rsvp-radio w-4 h-4 mt-0.5 rounded-full border-2 border-gray-300 shrink-0 transition-all"></div>
@@ -356,13 +356,21 @@ import '../styles/global.css';
             class="w-full border border-gray-200 px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-gray-400 transition-colors" />
         </div>
 
+        <label class="flex items-start gap-3 cursor-pointer">
+          <input type="checkbox" name="commitment" id="commitment-checkbox" required
+            class="mt-1 w-4 h-4 shrink-0 accent-[#A51C30]" />
+          <span class="text-xs text-gray-500 leading-relaxed">
+            I understand that by committing above, I am responsible for the cost of reunion events even if I am ultimately unable to attend.
+          </span>
+        </label>
+
         <div>
           <label class="block text-xs font-semibold tracking-widest uppercase text-gray-500 mb-2">Anything else? <span class="text-gray-300 font-normal normal-case tracking-normal">Optional</span></label>
           <textarea name="notes" rows="3" placeholder="Questions, dietary requirements, or anything we should know..."
             class="w-full border border-gray-200 px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-gray-400 transition-colors resize-none"></textarea>
         </div>
 
-        <div id="rsvp-error" class="hidden text-sm text-red-600 py-2">Please fill in all required fields and select your attendance option.</div>
+        <div id="rsvp-error" class="hidden text-sm text-red-600 py-2">Please fill in all required fields, select your attendance commitment, and confirm you understand the cost commitment.</div>
 
         <button type="submit" id="rsvp-submit"
           class="w-full py-4 text-white text-sm tracking-widest uppercase font-medium transition-all duration-200 hover:opacity-90"
@@ -405,7 +413,8 @@ import '../styles/global.css';
       e.preventDefault();
       const form = e.target;
       const attendance = document.getElementById('attendance-input').value;
-      if (!attendance) {
+      const commitment = document.getElementById('commitment-checkbox').checked;
+      if (!attendance || !commitment) {
         document.getElementById('rsvp-error').classList.remove('hidden');
         return;
       }
