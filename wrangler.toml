@@ -2,7 +2,8 @@ name = "amp210"
 compatibility_date = "2024-01-01"
 pages_build_output_dir = "dist"
 
-[[d1_databases]]
-binding = "DB"
-database_name = "amp210-rsvps"
-database_id = "PLACEHOLDER"
+# D1 binding — add database_id once created in Cloudflare dashboard
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "amp210-rsvps"
+# database_id = "YOUR_DATABASE_ID_HERE"
