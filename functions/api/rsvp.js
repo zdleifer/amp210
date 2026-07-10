@@ -2,7 +2,6 @@ export async function onRequestPost(context) {
   try {
     const data = await context.request.json();
 
-    // Validate required fields
     if (!data.firstName || !data.lastName || !data.email || !data.attendance) {
       return new Response(JSON.stringify({ error: 'Missing required fields' }), {
         status: 400,
@@ -10,20 +9,35 @@ export async function onRequestPost(context) {
       });
     }
 
-    // Store in D1 if available
-    if (context.env.DB) {
-      await context.env.DB.prepare(
-        `INSERT INTO rsvps (first_name, last_name, email, attendance, partner_name, notes, submitted_at)
-         VALUES (?, ?, ?, ?, ?, ?, ?)`
-      ).bind(
-        data.firstName,
-        data.lastName,
-        data.email,
-        data.attendance,
-        data.partnerName || '',
-        data.notes || '',
-        data.submittedAt || new Date().toISOString()
-      ).run();
+    const attendanceLabel = data.attendance === 'plus1' ? 'Yes, me + partner' : "Yes, I'm in";
+
+    const airtableRes = await fetch(
+      'https://api.airtable.com/v0/appIvQCZHBkJbOn0e/tbl5lGtohdFApVFeY',
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${context.env.AIRTABLE_TOKEN}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fields: {
+            'First Name': data.firstName,
+            'Last Name': data.lastName,
+            'Email': data.email,
+            'Attendance': attendanceLabel,
+            'Partner Name': data.partnerName || '',
+            'Notes': data.notes || '',
+          },
+        }),
+      }
+    );
+
+    if (!airtableRes.ok) {
+      const errText = await airtableRes.text();
+      return new Response(JSON.stringify({ error: 'Airtable error', detail: errText }), {
+        status: 502,
+        headers: { 'Content-Type': 'application/json' },
+      });
     }
 
     return new Response(JSON.stringify({ ok: true }), {
