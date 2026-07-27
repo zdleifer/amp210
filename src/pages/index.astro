@@ -26,6 +26,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
     .photo-card { cursor: pointer; overflow: hidden; }
     .photo-card img { transition: transform 0.4s ease; }
     .photo-card:hover img { transform: scale(1.04); }
+    .img-text { text-shadow: 0 1px 6px rgba(0,0,0,0.9), 0 2px 12px rgba(0,0,0,0.6); }
 
     #lightbox { display:none; position:fixed; inset:0; z-index:1000; background:rgba(0,0,0,0.93);
       align-items:center; justify-content:center; flex-direction:column; padding:24px; }
@@ -68,9 +69,35 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         <a href="#flights" class="hover:text-[#A51C30] transition-colors">Flights</a>
         <a href="#register" class="ml-2 px-5 py-2 bg-[#A51C30] text-white rounded hover:bg-[#7a1424] transition-colors">Register</a>
       </nav>
-      <a href="#register" class="md:hidden px-4 py-2 bg-[#A51C30] text-white text-sm font-medium rounded">Register</a>
+      <!-- Mobile: hamburger + register -->
+      <div class="md:hidden flex items-center gap-3">
+        <a href="#register" class="px-4 py-2 bg-[#A51C30] text-white text-sm font-medium rounded">Register</a>
+        <button id="nav-toggle" onclick="toggleMobileNav()" aria-label="Menu" class="p-1">
+          <svg id="icon-open" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
+          </svg>
+          <svg id="icon-close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="hidden">
+            <line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
+
+  <!-- Mobile nav drawer -->
+  <div id="mobile-nav" class="hidden md:hidden fixed inset-x-0 z-40 bg-white shadow-lg border-b border-[#E0DDDA]" style="top:64px;">
+    <nav class="flex flex-col">
+      <a href="#experience" onclick="closeMobileNav()" class="px-6 py-4 text-base font-medium border-b border-[#E0DDDA] hover:bg-[#F8F7F4] hover:text-[#A51C30] transition-colors">Experience</a>
+      <a href="#itinerary" onclick="closeMobileNav()" class="px-6 py-4 text-base font-medium border-b border-[#E0DDDA] hover:bg-[#F8F7F4] hover:text-[#A51C30] transition-colors">Itinerary</a>
+      <a href="#hotel" onclick="closeMobileNav()" class="px-6 py-4 text-base font-medium border-b border-[#E0DDDA] hover:bg-[#F8F7F4] hover:text-[#A51C30] transition-colors">Hotel</a>
+      <a href="#gallery" onclick="closeMobileNav()" class="px-6 py-4 text-base font-medium border-b border-[#E0DDDA] hover:bg-[#F8F7F4] hover:text-[#A51C30] transition-colors">Gallery</a>
+      <a href="#cost" onclick="closeMobileNav()" class="px-6 py-4 text-base font-medium border-b border-[#E0DDDA] hover:bg-[#F8F7F4] hover:text-[#A51C30] transition-colors">Cost</a>
+      <a href="#flights" onclick="closeMobileNav()" class="px-6 py-4 text-base font-medium border-b border-[#E0DDDA] hover:bg-[#F8F7F4] hover:text-[#A51C30] transition-colors">Flights</a>
+      <div class="px-6 py-4">
+        <a href="#register" onclick="closeMobileNav()" class="block w-full py-3 bg-[#A51C30] text-white text-base font-medium rounded text-center hover:bg-[#7a1424] transition-colors">Register Now</a>
+      </div>
+    </nav>
+  </div>
 
   <!-- HERO -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -110,15 +137,15 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
   <section class="relative overflow-hidden" style="height:420px;">
     <img src="/assets/class-photo-cropped.jpg" alt="AMP 210 cohort, February–May 2026"
       class="w-full h-full object-cover object-top" />
-    <div class="absolute inset-0" style="background:linear-gradient(to right, rgba(10,22,40,0.72) 0%, rgba(10,22,40,0.25) 60%, rgba(10,22,40,0.05) 100%);"></div>
+    <div class="absolute inset-0" style="background:linear-gradient(to right, rgba(10,22,40,0.85) 0%, rgba(10,22,40,0.45) 60%, rgba(10,22,40,0.1) 100%);"></div>
     <div class="absolute inset-0 flex items-center px-10 md:px-20">
       <div class="max-w-lg">
-        <p class="section-label text-white/60 mb-3">AMP 210</p>
-        <h2 style="font-family:'EB Garamond',Georgia,serif; font-size:clamp(1.8rem,4vw,3rem); font-weight:400; color:white; line-height:1.2;">
+        <p class="section-label text-white/60 mb-3 img-text">AMP 210</p>
+        <h2 style="font-family:'EB Garamond',Georgia,serif; font-size:clamp(1.8rem,4vw,3rem); font-weight:400; color:white; line-height:1.2;" class="img-text">
           Together again.<br />This time, Istanbul.
         </h2>
         <div class="w-10 h-0.5 bg-[#A51C30] mt-5 mb-5"></div>
-        <p style="color:rgba(255,255,255,0.75); font-size:0.95rem; line-height:1.7;">
+        <p style="color:rgba(255,255,255,0.75); font-size:0.95rem; line-height:1.7;" class="img-text">
           We came together February&ndash;May 2026. Now we reconvene where two continents meet.
         </p>
       </div>
@@ -128,7 +155,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
   <!-- WHAT'S INCLUDED -->
   <section id="experience" class="py-24 px-6 bg-[#F8F7F4]">
     <div class="max-w-6xl mx-auto">
-      <div class="max-w-2xl mb-16">
+      <div class="max-w-4xl mb-16">
         <p class="section-label mb-4">The Experience</p>
         <h2 style="font-family:'EB Garamond',Georgia,serif; font-size:clamp(2rem,4vw,3rem); font-weight:400; line-height:1.2;">
           Three days. One unforgettable city.
@@ -204,13 +231,13 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
     <img src="/assets/yacht-deck.jpg" alt="Private yacht deck on the Bosphorus with Turkish flag"
       class="w-full h-full object-cover object-center" style="cursor:pointer;"
       onclick="openLightbox('/assets/yacht-deck.jpg','Aboard the Ay Yildiz, our private yacht on the Bosphorus, with the Fatih Sultan Mehmet Bridge in the background')" />
-    <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(8,18,35,0.7) 0%, rgba(8,18,35,0.1) 60%);"></div>
+    <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(8,18,35,0.85) 0%, rgba(8,18,35,0.25) 60%);"></div>
     <div class="absolute bottom-0 left-0 right-0 p-10 md:p-16">
-      <p class="section-label text-white/60 mb-3">Friday, October 23</p>
-      <h2 style="font-family:'EB Garamond',Georgia,serif; font-size:clamp(1.8rem,4vw,3rem); font-weight:400; color:white; line-height:1.2;">
+      <p class="section-label text-white/60 mb-3 img-text">Friday, October 23</p>
+      <h2 style="font-family:'EB Garamond',Georgia,serif; font-size:clamp(1.8rem,4vw,3rem); font-weight:400; color:white; line-height:1.2;" class="img-text">
         Private Bosphorus Yacht Tour
       </h2>
-      <p style="color:rgba(255,255,255,0.75); font-size:0.95rem;" class="mt-3">
+      <p style="color:rgba(255,255,255,0.75); font-size:0.95rem;" class="mt-3 img-text">
         17:30&ndash;19:30 &nbsp;&middot;&nbsp; Sailing from Galataport between Europe and Asia
       </p>
     </div>
@@ -254,8 +281,8 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
               <img src="/assets/hero.jpg" alt="Istanbul Bosphorus at dusk"
                 class="day-photo absolute inset-0 w-full h-full object-cover"
                 onclick="openLightbox('/assets/hero.jpg','The Bosphorus at dusk, Istanbul, where Europe meets Asia')" />
-              <div class="absolute inset-0 flex items-end p-3" style="background:linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%);">
-                <p class="text-white text-xs">Bosphorus, Istanbul</p>
+              <div class="absolute inset-0 flex items-end p-3" style="background:linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);">
+                <p class="text-white text-xs img-text">Bosphorus, Istanbul</p>
               </div>
             </div>
           </div>
@@ -302,8 +329,8 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
               <img src="/assets/yacht-night.jpg" alt="Private yacht lit up at night on the Bosphorus"
                 class="day-photo absolute inset-0 w-full h-full object-cover"
                 onclick="openLightbox('/assets/yacht-night.jpg','The Ay Yildiz, our private yacht lit up at night on the Bosphorus')" />
-              <div class="absolute inset-0 flex items-end p-3" style="background:linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%);">
-                <p class="text-white text-xs">Private Bosphorus Yacht</p>
+              <div class="absolute inset-0 flex items-end p-3" style="background:linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);">
+                <p class="text-white text-xs img-text">Private Bosphorus Yacht</p>
               </div>
             </div>
           </div>
@@ -354,8 +381,8 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
               <img src="/assets/topkapi.jpg" alt="Topkapi Palace harem interior"
                 class="day-photo absolute inset-0 w-full h-full object-cover"
                 onclick="openLightbox('/assets/topkapi.jpg','Topkapi Palace, the gilded heart of the Ottoman Empire, home to sultans for 400 years')" />
-              <div class="absolute inset-0 flex items-end p-3" style="background:linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%);">
-                <p class="text-white text-xs">Topkapi Palace</p>
+              <div class="absolute inset-0 flex items-end p-3" style="background:linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);">
+                <p class="text-white text-xs img-text">Topkapi Palace</p>
               </div>
             </div>
           </div>
@@ -386,8 +413,8 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
               <img src="/assets/hotel.jpg" alt="Swissôtel The Bosphorus exterior"
                 class="day-photo absolute inset-0 w-full h-full object-cover"
                 onclick="openLightbox('/assets/hotel.jpg','Swissôtel The Bosphorus, our home for three nights in the heart of Istanbul')" />
-              <div class="absolute inset-0 flex items-end p-3" style="background:linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%);">
-                <p class="text-white text-xs">Swissôtel The Bosphorus</p>
+              <div class="absolute inset-0 flex items-end p-3" style="background:linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);">
+                <p class="text-white text-xs img-text">Swissôtel The Bosphorus</p>
               </div>
             </div>
           </div>
@@ -463,48 +490,48 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         <div class="photo-card rounded-lg overflow-hidden relative group" style="height:240px;"
           onclick="openLightbox('/assets/hagia-sophia.jpg','Hagia Sophia, built in 537 AD, this Byzantine masterpiece dominates Istanbul\'s skyline with the Bosphorus stretching behind it. We visit on October 24.')">
           <img src="/assets/hagia-sophia.jpg" alt="Hagia Sophia aerial with Bosphorus" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);">
-            <p class="text-white text-sm font-medium">Hagia Sophia</p>
+          <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.1) 60%);">
+            <p class="text-white text-sm font-medium img-text">Hagia Sophia</p>
           </div>
         </div>
 
         <div class="photo-card rounded-lg overflow-hidden relative" style="height:240px;"
           onclick="openLightbox('/assets/topkapi.jpg','Topkapi Palace, the imperial seat of the Ottoman Empire for 400 years. The gilded Harem chambers are among the most extraordinary interiors in the world.')">
           <img src="/assets/topkapi.jpg" alt="Topkapi Palace interior" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);">
-            <p class="text-white text-sm font-medium">Topkapi Palace</p>
+          <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.1) 60%);">
+            <p class="text-white text-sm font-medium img-text">Topkapi Palace</p>
           </div>
         </div>
 
         <div class="photo-card rounded-lg overflow-hidden relative" style="height:240px;"
           onclick="openLightbox('/assets/grand-bazaar.jpg','Grand Bazaar, one of the world\'s oldest and largest covered markets. Over 4,000 shops under vaulted ceilings dating to 1461. Free time here on October 24.')">
           <img src="/assets/grand-bazaar.jpg" alt="Grand Bazaar lanterns" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);">
-            <p class="text-white text-sm font-medium">Grand Bazaar</p>
+          <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.1) 60%);">
+            <p class="text-white text-sm font-medium img-text">Grand Bazaar</p>
           </div>
         </div>
 
         <div class="photo-card rounded-lg overflow-hidden relative" style="height:240px;"
           onclick="openLightbox('/assets/yacht-deck.jpg','Aboard the Ay Yildiz, our private yacht on the Bosphorus. The Fatih Sultan Mehmet Bridge connects Europe and Asia in the background.')">
           <img src="/assets/yacht-deck.jpg" alt="Private yacht deck on Bosphorus" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);">
-            <p class="text-white text-sm font-medium">Private Bosphorus Yacht</p>
+          <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.1) 60%);">
+            <p class="text-white text-sm font-medium img-text">Private Bosphorus Yacht</p>
           </div>
         </div>
 
         <div class="photo-card rounded-lg overflow-hidden relative" style="height:240px;"
           onclick="openLightbox('/assets/galataport.jpg','Galataport Istanbul, a landmark waterfront destination and cruise terminal on the Bosphorus shore. Home to the Istanbul Modern Art Museum, where we visit on October 23.')">
           <img src="/assets/galataport.jpg" alt="Galataport Istanbul aerial" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);">
-            <p class="text-white text-sm font-medium">Galataport</p>
+          <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.1) 60%);">
+            <p class="text-white text-sm font-medium img-text">Galataport</p>
           </div>
         </div>
 
         <div class="photo-card rounded-lg overflow-hidden relative" style="height:240px;"
           onclick="openLightbox('/assets/frankie.jpg','Frankie Galataport, our Gala Dinner venue on the evening of October 24. A celebrated Turkish fine dining restaurant with a dramatic interior overlooking the Bosphorus.')">
           <img src="/assets/frankie.jpg" alt="Frankie Galataport restaurant interior" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);">
-            <p class="text-white text-sm font-medium">Frankie — Gala Dinner</p>
+          <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.1) 60%);">
+            <p class="text-white text-sm font-medium img-text">Frankie, Gala Dinner</p>
           </div>
         </div>
 
@@ -661,7 +688,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
   <!-- FLIGHTS -->
   <section id="flights" class="py-24 px-6 bg-white">
     <div class="max-w-6xl mx-auto">
-      <div class="max-w-2xl mb-12">
+      <div class="max-w-4xl mb-12">
         <p class="section-label mb-4">Getting There</p>
         <h2 style="font-family:'EB Garamond',Georgia,serif; font-size:clamp(2rem,4vw,3rem); font-weight:400; line-height:1.2;">
           Turkish Airlines discount now live
@@ -1035,6 +1062,21 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
   </footer>
 
   <script is:inline>
+    function toggleMobileNav() {
+      var nav = document.getElementById('mobile-nav');
+      var open = document.getElementById('icon-open');
+      var close = document.getElementById('icon-close');
+      var isHidden = nav.classList.contains('hidden');
+      nav.classList.toggle('hidden');
+      open.classList.toggle('hidden', !isHidden);
+      close.classList.toggle('hidden', isHidden);
+    }
+    function closeMobileNav() {
+      document.getElementById('mobile-nav').classList.add('hidden');
+      document.getElementById('icon-open').classList.remove('hidden');
+      document.getElementById('icon-close').classList.add('hidden');
+    }
+
     function openLightbox(src, caption) {
       document.getElementById('lightbox-img').src = src;
       document.getElementById('lightbox-caption').textContent = caption;
