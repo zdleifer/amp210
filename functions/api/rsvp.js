@@ -21,8 +21,8 @@ export async function onRequestPost(context) {
           fields: {
             'First Name': data.firstName,
             'Last Name': data.lastName,
-            'Email': data.email,
-            'Phone': data.phone,
+            'Email Address': data.email,
+            'Phone Number': data.phone,
             'Attending': data.attendance,
           },
         }),
