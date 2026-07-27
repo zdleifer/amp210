@@ -722,7 +722,7 @@ const description = "Harvard Business School AMP 210 gathers in Istanbul, Octobe
                   <div id="dot-alone" class="w-2.5 h-2.5 rounded-full bg-[#A51C30] hidden"></div>
                 </div>
                 <div>
-                  <p class="text-sm font-medium">I am attending alone</p>
+                  <p class="text-sm font-medium">Alone (1)</p>
                   <p class="text-xs text-[#6B6B6B] mt-0.5">Just me</p>
                 </div>
               </label>
@@ -731,7 +731,7 @@ const description = "Harvard Business School AMP 210 gathers in Istanbul, Octobe
                   <div id="dot-guest" class="w-2.5 h-2.5 rounded-full bg-[#A51C30] hidden"></div>
                 </div>
                 <div>
-                  <p class="text-sm font-medium">I am bringing a guest</p>
+                  <p class="text-sm font-medium">With Guest (2)</p>
                   <p class="text-xs text-[#6B6B6B] mt-0.5">Me plus one</p>
                 </div>
               </label>
@@ -796,11 +796,11 @@ const description = "Harvard Business School AMP 210 gathers in Istanbul, Octobe
       var radioA = document.getElementById('radio-alone'), dotA = document.getElementById('dot-alone'), optA = document.getElementById('opt-alone');
       var radioG = document.getElementById('radio-guest'), dotG = document.getElementById('dot-guest'), optG = document.getElementById('opt-guest');
       if (choice === 'alone') {
-        val.value = 'Alone';
+        val.value = 'Alone (1)';
         radioA.style.borderColor='#A51C30'; dotA.classList.remove('hidden'); optA.style.borderColor='#A51C30'; optA.style.background='#fdf5f6';
         radioG.style.borderColor='#E0DDDA'; dotG.classList.add('hidden'); optG.style.borderColor='#E0DDDA'; optG.style.background='';
       } else {
-        val.value = 'With Guest';
+        val.value = 'With Guest (2)';
         radioG.style.borderColor='#A51C30'; dotG.classList.remove('hidden'); optG.style.borderColor='#A51C30'; optG.style.background='#fdf5f6';
         radioA.style.borderColor='#E0DDDA'; dotA.classList.add('hidden'); optA.style.borderColor='#E0DDDA'; optA.style.background='';
       }
