@@ -2,13 +2,12 @@ export async function onRequestPost(context) {
   try {
     const data = await context.request.json();
 
-    if (!data.firstName || !data.lastName || !data.email || !data.attendance) {
+    if (!data.firstName || !data.lastName || !data.email || !data.phone || !data.attendance) {
       return new Response(JSON.stringify({ error: 'Missing required fields' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
       });
     }
-
 
     const airtableRes = await fetch(
       'https://api.airtable.com/v0/appIvQCZHBkJbOn0e/tbl5lGtohdFApVFeY',
@@ -23,9 +22,8 @@ export async function onRequestPost(context) {
             'First Name': data.firstName,
             'Last Name': data.lastName,
             'Email': data.email,
-            'Attendance': true,
-            'Partner Name': data.partnerName || '',
-            'Notes': data.notes || '',
+            'Phone': data.phone,
+            'Attending': data.attendance,
           },
         }),
       }
