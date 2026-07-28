@@ -1249,10 +1249,10 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         var heroNum = document.getElementById('hero-count-num');
         if (count > 0) { heroNum.textContent = count; heroBadge.classList.remove('hidden'); }
 
-        // form count
+        // form count (only above 10)
         var formCount = document.getElementById('form-reg-count');
-        if (count > 0) {
-          formCount.textContent = count + ' classmate' + (count === 1 ? ' has' : 's have') + ' already registered.';
+        if (count > 10) {
+          formCount.textContent = count + ' classmates have already registered.';
           formCount.classList.remove('hidden');
         }
 
