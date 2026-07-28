@@ -1269,13 +1269,14 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
           emptyEl.classList.add('hidden');
           listEl.innerHTML = list.map(function(p) {
             var commentHtml = p.comment
-              ? '<p class=”text-sm text-[#6B6B6B] mt-1 leading-relaxed”>”' + escHtml(p.comment) + '”</p>'
+              ? '<p class=”text-xs text-[#6B6B6B] mt-2 leading-relaxed italic”>”' + escHtml(p.comment) + '”</p>'
               : '';
-            return '<div class=”flex items-start gap-4 p-4 bg-[#F8F7F4] rounded-lg border border-[#E0DDDA]”>'
-              + '<div class=”w-10 h-10 rounded-full bg-[#A51C30]/10 border border-[#A51C30]/20 flex items-center justify-center shrink-0”>'
-              + '<span style=”font-family:\'EB Garamond\',Georgia,serif; font-size:1.1rem; color:#A51C30; font-weight:500;”>' + escHtml(p.name.charAt(0)) + '</span>'
+            return '<div class=”bg-white border border-[#E0DDDA] rounded-xl p-5 flex flex-col items-center text-center”>'
+              + '<div class=”w-14 h-14 rounded-full flex items-center justify-center mb-3” style=”background:rgba(165,28,48,0.08);border:1px solid rgba(165,28,48,0.2);”>'
+              + '<span style=”font-family:\'EB Garamond\',Georgia,serif; font-size:1.6rem; color:#A51C30; font-weight:500; line-height:1;”>' + escHtml(p.name.charAt(0)) + '</span>'
               + '</div>'
-              + '<div class=”min-w-0”><p class=”font-medium text-sm”>' + escHtml(p.name) + '</p>' + commentHtml + '</div>'
+              + '<p class=”font-medium text-sm text-[#1C1C1C]”>' + escHtml(p.name) + '</p>'
+              + commentHtml
               + '</div>';
           }).join('');
         }
