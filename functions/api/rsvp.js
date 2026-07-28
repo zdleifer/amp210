@@ -24,6 +24,7 @@ export async function onRequestPost(context) {
             'Email Address': data.email,
             'Phone Number': data.phone,
             'Attending': data.attendance,
+            ...(data.comment ? { 'Comment': data.comment } : {}),
           },
         }),
       }

@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 const title = "AMP 210 Istanbul Reunion | October 22–25, 2026";
-const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Register by August 2.";
+const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Register by August 7.";
 ---
 
 <!doctype html>
@@ -67,6 +67,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         <a href="#gallery" class="hover:text-[#A51C30] transition-colors">Gallery</a>
         <a href="#cost" class="hover:text-[#A51C30] transition-colors">Cost</a>
         <a href="#flights" class="hover:text-[#A51C30] transition-colors">Flights</a>
+        <a href="#whos-coming" class="hover:text-[#A51C30] transition-colors">Who's Coming</a>
         <a href="#register" class="ml-2 px-5 py-2 bg-[#A51C30] text-white rounded hover:bg-[#7a1424] transition-colors">Register</a>
       </nav>
       <!-- Mobile: hamburger + register -->
@@ -93,6 +94,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
       <a href="#gallery" onclick="closeMobileNav()" class="px-6 py-4 text-base font-medium border-b border-[#E0DDDA] hover:bg-[#F8F7F4] hover:text-[#A51C30] transition-colors">Gallery</a>
       <a href="#cost" onclick="closeMobileNav()" class="px-6 py-4 text-base font-medium border-b border-[#E0DDDA] hover:bg-[#F8F7F4] hover:text-[#A51C30] transition-colors">Cost</a>
       <a href="#flights" onclick="closeMobileNav()" class="px-6 py-4 text-base font-medium border-b border-[#E0DDDA] hover:bg-[#F8F7F4] hover:text-[#A51C30] transition-colors">Flights</a>
+      <a href="#whos-coming" onclick="closeMobileNav()" class="px-6 py-4 text-base font-medium border-b border-[#E0DDDA] hover:bg-[#F8F7F4] hover:text-[#A51C30] transition-colors">Who's Coming</a>
       <div class="px-6 py-4">
         <a href="#register" onclick="closeMobileNav()" class="block w-full py-3 bg-[#A51C30] text-white text-base font-medium rounded text-center hover:bg-[#7a1424] transition-colors">Register Now</a>
       </div>
@@ -121,9 +123,15 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         <a href="#itinerary" class="px-8 py-4 border border-white/30 text-white font-medium rounded hover:bg-white/10 transition-all text-base">View Itinerary</a>
       </div>
 
-      <div class="mt-12 inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/20 bg-white/8">
-        <div class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></div>
-        <span class="text-sm text-white/80">Registration closes <strong class="text-white">August 2, 2026</strong></span>
+      <div class="mt-8 flex flex-col sm:flex-row items-center gap-3 justify-center">
+        <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/20 bg-white/8">
+          <div class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></div>
+          <span class="text-sm text-white/80">Registration closes <strong class="text-white">August 7, 2026</strong></span>
+        </div>
+        <div id="hero-reg-count" class="hidden inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/20 bg-white/8">
+          <div class="w-2 h-2 rounded-full bg-green-400"></div>
+          <span class="text-sm text-white/80"><strong id="hero-count-num" class="text-white">0</strong> registered so far</span>
+        </div>
       </div>
     </div>
 
@@ -178,10 +186,10 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         </div>
 
         <div class="bg-white rounded-lg overflow-hidden border border-[#E0DDDA] photo-card"
-          onclick="openLightbox('/assets/frankie.jpg','Gala Dinner at Frankie Galataport, Turkish fine dining in one of Istanbul\'s most celebrated restaurants')">
-          <img src="/assets/frankie.jpg" alt="Gala Dinner at Frankie Galataport" class="w-full h-48 object-cover" />
+          onclick="openLightbox('/assets/frankie.jpg','Celebration Dinner at Frankie Galataport, Turkish fine dining in one of Istanbul\'s most celebrated restaurants')">
+          <img src="/assets/frankie.jpg" alt="Celebration Dinner at Frankie Galataport" class="w-full h-48 object-cover" />
           <div class="p-6">
-            <h3 style="font-family:'EB Garamond',Georgia,serif; font-size:1.2rem;" class="mb-2">Gala Dinner</h3>
+            <h3 style="font-family:'EB Garamond',Georgia,serif; font-size:1.2rem;" class="mb-2">Celebration Dinner</h3>
             <p class="text-[#6B6B6B] text-sm leading-relaxed">An evening of Turkish fine dining at Frankie Galataport, celebrating AMP 210 together in style.</p>
           </div>
         </div>
@@ -273,7 +281,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
                 </div>
                 <div class="flex gap-4">
                   <span class="text-[#6B6B6B] text-sm w-28 shrink-0 pt-0.5">Evening</span>
-                  <p class="text-sm leading-relaxed">Free time. A curated guide to Istanbul's best dining and drinking venues provided on arrival.</p>
+                  <p class="text-sm leading-relaxed">Informal dinners to be arranged between attendees (not included). A curated guide to Istanbul's best dining and drinking venues will be provided on arrival.</p>
                 </div>
               </div>
             </div>
@@ -345,7 +353,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
               <p class="mt-3 text-xs tracking-widest text-white/45 uppercase">Signature Experience</p>
             </div>
             <div class="lg:col-span-6 p-8 bg-white">
-              <h3 style="font-family:'EB Garamond',Georgia,serif; font-size:1.4rem;" class="mb-5">Historical Istanbul &amp; Gala Dinner</h3>
+              <h3 style="font-family:'EB Garamond',Georgia,serif; font-size:1.4rem;" class="mb-5">Historical Istanbul &amp; Celebration Dinner</h3>
               <div class="space-y-3">
                 <div class="flex gap-4">
                   <span class="text-[#6B6B6B] text-sm w-28 shrink-0 pt-0.5">09:30&ndash;12:00</span>
@@ -369,7 +377,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
                 </div>
                 <div class="flex gap-4">
                   <span class="text-[#6B6B6B] text-sm w-28 shrink-0 pt-0.5">19:15</span>
-                  <p class="text-sm">Departure for Gala Dinner at Frankie Galataport</p>
+                  <p class="text-sm">Departure for Celebration Dinner at Frankie Galataport</p>
                 </div>
                 <div class="flex gap-4">
                   <span class="text-[#6B6B6B] text-sm w-28 shrink-0 pt-0.5">23:30</span>
@@ -528,10 +536,10 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         </div>
 
         <div class="photo-card rounded-lg overflow-hidden relative" style="height:240px;"
-          onclick="openLightbox('/assets/frankie.jpg','Frankie Galataport, our Gala Dinner venue on the evening of October 24. A celebrated Turkish fine dining restaurant with a dramatic interior overlooking the Bosphorus.')">
+          onclick="openLightbox('/assets/frankie.jpg','Frankie Galataport, our Celebration Dinner venue on the evening of October 24. A celebrated Turkish fine dining restaurant with a dramatic interior overlooking the Bosphorus.')">
           <img src="/assets/frankie.jpg" alt="Frankie Galataport restaurant interior" class="w-full h-full object-cover" />
           <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.1) 60%);">
-            <p class="text-white text-sm font-medium img-text">Frankie, Gala Dinner</p>
+            <p class="text-white text-sm font-medium img-text">Frankie, Celebration Dinner</p>
           </div>
         </div>
 
@@ -553,7 +561,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="p-7 border border-[#E0DDDA] rounded-lg">
           <div class="text-4xl font-light text-[#E0DDDA] mb-4" style="font-family:'EB Garamond',Georgia,serif;">01</div>
-          <h3 style="font-family:'EB Garamond',Georgia,serif; font-size:1.15rem;" class="mb-3">Register by August 2</h3>
+          <h3 style="font-family:'EB Garamond',Georgia,serif; font-size:1.15rem;" class="mb-3">Register by August 7</h3>
           <p class="text-[#6B6B6B] text-sm leading-relaxed">Submit your name, contact details, and whether you are attending alone or with a guest.</p>
         </div>
         <div class="p-7 border border-[#E0DDDA] rounded-lg">
@@ -564,7 +572,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         <div class="p-7 border border-[#E0DDDA] rounded-lg">
           <div class="text-4xl font-light text-[#E0DDDA] mb-4" style="font-family:'EB Garamond',Georgia,serif;">03</div>
           <h3 style="font-family:'EB Garamond',Georgia,serif; font-size:1.15rem;" class="mb-3">Receive Your Payment Link</h3>
-          <p class="text-[#6B6B6B] text-sm leading-relaxed">After the August 2 deadline, you will receive a personalized payment link based on your room selection. Solo attendees: €1,923.83. Attending with a guest: €2,895.28 for both.</p>
+          <p class="text-[#6B6B6B] text-sm leading-relaxed">After the August 7 deadline, you will receive a personalized payment link based on your room selection. Solo attendees: €1,923.83. Attending with a guest: €2,895.28 for both.</p>
         </div>
         <div class="p-7 border border-[#A51C30]/25 rounded-lg" style="background:linear-gradient(135deg,#fff 0%,#fdf5f6 100%);">
           <div class="text-4xl font-light mb-4" style="font-family:'EB Garamond',Georgia,serif; color:#A51C30; opacity:0.3;">04</div>
@@ -603,9 +611,10 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
           { label: "Keynote sessions at TSKB", detail: "Brian Hall and Sunil Gupta" },
           { label: "Istanbul Modern Art Museum", detail: "Guided tour at Galataport" },
           { label: "Historical Istanbul tour", detail: "Topkapi Palace, Hagia Sophia, Blue Mosque" },
-          { label: "Gala Dinner at Frankie Galataport", detail: "Saturday, October 24 evening" },
+          { label: "Celebration Dinner at Frankie Galataport", detail: "Saturday, October 24 evening" },
           { label: "All group meals", detail: "Lunches at TSKB and Pandeli Restaurant" },
-          { label: "All private transfers", detail: "Group transportation across all three days" },
+          { label: "All group transfers", detail: "Private group transportation across all three days. Airport transfers are not included." },
+          { label: "AMP 210 commemorative T-shirt", detail: "Exclusive keepsake for all attendees" },
         ].map(item => (
           <div class="flex items-start gap-3 bg-white p-4 rounded-lg border border-[#E0DDDA]">
             <div class="w-5 h-5 shrink-0 mt-0.5"><svg viewBox="0 0 24 24" fill="none" stroke="#A51C30" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg></div>
@@ -650,7 +659,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
               <tr class="border-b border-[#E0DDDA]">
                 <td class="px-8 py-4">
                   <p class="font-medium">Program &amp; Events</p>
-                  <p class="text-xs text-[#6B6B6B] mt-0.5">Yacht tour, gala dinner, tours, meals, transfers</p>
+                  <p class="text-xs text-[#6B6B6B] mt-0.5">Yacht tour, celebration dinner, tours, meals, transfers</p>
                 </td>
                 <td class="px-6 py-4 text-center font-medium">€813.05<p class="text-xs text-[#6B6B6B] font-normal mt-0.5">Per person</p></td>
                 <td class="px-6 py-4 text-center font-medium">€1,626.10<p class="text-xs text-[#6B6B6B] font-normal mt-0.5">2 × €813.05</p></td>
@@ -658,7 +667,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
               <tr class="border-b border-[#E0DDDA]" style="background:#fdf5f6;">
                 <td class="px-8 py-4">
                   <p class="font-semibold text-[#A51C30]">Flights: NOT included</p>
-                  <p class="text-xs text-[#6B6B6B] mt-0.5">Must be booked independently. Use Turkish Airlines promo code <strong>AMP210IST</strong> for 25% off economy / 20% off business.</p>
+                  <p class="text-xs text-[#6B6B6B] mt-0.5">Must be booked independently. Turkish Airlines discount available. Promo code provided upon registration.</p>
                 </td>
                 <td class="px-6 py-4 text-center" colspan="2">
                   <span class="text-sm font-medium text-[#A51C30]">Not included in package</span>
@@ -679,7 +688,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
           </table>
         </div>
         <div class="px-8 py-4 bg-[#F8F7F4] border-t border-[#E0DDDA]">
-          <p class="text-xs text-[#6B6B6B]">After the August 2 registration deadline, you will receive a personalized payment link based on your room choice. Solo attendees receive a single-room link (€1,923.83); those attending with a guest receive a double-room link (€2,895.28 for both).</p>
+          <p class="text-xs text-[#6B6B6B]">After the August 7 registration deadline, you will receive a personalized payment link based on your room choice. Solo attendees receive a single-room link (€1,923.83); those attending with a guest receive a double-room link (€2,895.28 for both).</p>
         </div>
       </div>
     </div>
@@ -698,14 +707,14 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
 
       <div class="mb-10 p-5 rounded-lg border-2 border-[#A51C30] bg-[#fdf5f6]">
         <p class="font-semibold text-[#A51C30] mb-1">Airfare is not included in the package price and must be booked separately.</p>
-        <p class="text-sm text-[#6B6B6B]">Use the Turkish Airlines promo code below for an exclusive AMP 210 discount. Book by October 15, 2026.</p>
+        <p class="text-sm text-[#6B6B6B]">An exclusive AMP 210 discount is available through Turkish Airlines. Your promo code will be sent to you upon registration.</p>
       </div>
 
       <!-- Promo highlights -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
         <div class="p-6 bg-[#F8F7F4] rounded-lg border border-[#E0DDDA]">
           <p class="text-xs text-[#6B6B6B] uppercase tracking-wide mb-2">Promo Code</p>
-          <p style="font-family:'EB Garamond',Georgia,serif; font-size:1.5rem; color:#A51C30; font-weight:500; letter-spacing:0.05em;">AMP210IST</p>
+          <p class="text-sm font-medium text-[#1C1C1C]">Sent to you upon registration</p>
         </div>
         <div class="p-6 bg-[#F8F7F4] rounded-lg border border-[#E0DDDA]">
           <p class="text-xs text-[#6B6B6B] uppercase tracking-wide mb-2">Discount</p>
@@ -751,7 +760,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
           </table>
         </div>
         <div class="px-8 py-4 bg-[#F8F7F4] border-t border-[#E0DDDA]">
-          <p class="text-xs text-[#6B6B6B]">Book direct at turkishairlines.com and enter promo code <strong>AMP210IST</strong> at checkout. Discount applies to roundtrip fares to Istanbul (IST). Book by October 15, 2026.</p>
+          <p class="text-xs text-[#6B6B6B]">Book direct at turkishairlines.com. Discount applies to roundtrip fares to Istanbul (IST). Book by October 15, 2026. Your promo code will be provided upon registration.</p>
         </div>
       </div>
     </div>
@@ -768,11 +777,12 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         <div class="divider mt-5 mx-auto"></div>
         <div class="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#A51C30]/8 border border-[#A51C30]/20">
           <div class="w-2 h-2 rounded-full bg-[#A51C30] animate-pulse"></div>
-          <span class="text-sm font-medium text-[#A51C30]">Registration closes August 2, 2026</span>
+          <span class="text-sm font-medium text-[#A51C30]">Registration closes August 7, 2026</span>
         </div>
         <p class="text-[#6B6B6B] mt-4 text-sm leading-relaxed max-w-sm mx-auto">
           Your contact details are collected so the tour company can send you a personalized payment link.
         </p>
+        <p id="form-reg-count" class="hidden mt-3 text-sm font-medium text-[#A51C30]"></p>
       </div>
 
       <div class="bg-white rounded-xl border border-[#E0DDDA] p-8 shadow-sm">
@@ -1026,6 +1036,13 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
             </div>
             <input type="hidden" name="attendance" id="attendance-value" value="" />
           </div>
+          <div>
+            <label class="block text-sm font-medium mb-1.5">Share your excitement <span class="text-[#6B6B6B] font-normal">(optional)</span></label>
+            <textarea name="comment" id="comment-input" rows="3" maxlength="300"
+              class="w-full px-4 py-3 border border-[#E0DDDA] rounded text-sm focus:outline-none focus:border-[#A51C30] focus:ring-1 focus:ring-[#A51C30]/20 transition-colors resize-none"
+              placeholder="What are you most excited about? Your message will be shown to fellow attendees."></textarea>
+            <p class="text-xs text-[#6B6B6B] mt-1">Max 300 characters. Visible to other AMP 210 attendees on this page.</p>
+          </div>
           <div id="form-error" class="hidden p-4 bg-red-50 border border-red-200 rounded text-sm text-red-700"></div>
           <button type="submit" id="submit-btn"
             class="w-full py-4 bg-[#A51C30] text-white font-medium rounded hover:bg-[#7a1424] transition-all text-base mt-2">
@@ -1041,11 +1058,27 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <h3 style="font-family:'EB Garamond',Georgia,serif; font-size:2rem;" class="mb-3">You're registered.</h3>
-          <p class="text-[#6B6B6B] text-base mb-2">We have your information. Look out for your personalized payment link after August 2.</p>
+          <p class="text-[#6B6B6B] text-base mb-2">We have your information. Look out for your personalized payment link after August 7.</p>
           <p class="text-[#6B6B6B] text-sm">Questions? Reach out to the committee.</p>
           <a href="#top" class="inline-block mt-8 text-sm text-[#A51C30] hover:underline">&uarr; Back to top</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- WHO'S COMING -->
+  <section id="whos-coming" class="py-16 px-6 bg-white">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-8">
+        <p class="section-label mb-3">AMP 210</p>
+        <h2 style="font-family:'EB Garamond',Georgia,serif; font-size:clamp(1rem,4vw,2.2rem); font-weight:400; line-height:1.2;">
+          Who's Coming
+        </h2>
+        <div class="divider mt-4 mx-auto"></div>
+        <p id="whos-coming-count" class="text-[#6B6B6B] text-sm mt-4"></p>
+      </div>
+      <div id="whos-coming-list" class="space-y-3"></div>
+      <p id="whos-coming-empty" class="hidden text-center text-[#6B6B6B] text-sm py-8">No registrations yet. Be the first!</p>
     </div>
   </section>
 
@@ -1181,13 +1214,14 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
       try {
         var res = await fetch('/api/rsvp', {
           method: 'POST', headers: {'Content-Type':'application/json'},
-          body: JSON.stringify({firstName, lastName, email, phone, attendance})
+          body: JSON.stringify({firstName, lastName, email, phone, attendance, comment: document.getElementById('comment-input').value.trim()})
         });
         var data = await res.json();
         if (res.ok && data.ok) {
           gtag('event','form_submission',{event_category:'registration',event_label:attendance,value:1});
           document.getElementById('rsvp-form').classList.add('hidden');
           document.getElementById('success-state').classList.remove('hidden');
+          setTimeout(loadRegistrants, 1500);
         } else {
           errorDiv.textContent = 'Something went wrong. Please try again or contact the committee.';
           errorDiv.classList.remove('hidden'); btn.textContent='Submit Registration'; btn.disabled=false;
@@ -1197,6 +1231,58 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         errorDiv.classList.remove('hidden'); btn.textContent='Submit Registration'; btn.disabled=false;
       }
     });
+
+    async function loadRegistrants() {
+      try {
+        var r = await fetch('/api/registrants');
+        if (!r.ok) return;
+        var d = await r.json();
+        var count = d.count || 0;
+        var list = d.registrants || [];
+
+        // hero badge
+        var heroBadge = document.getElementById('hero-reg-count');
+        var heroNum = document.getElementById('hero-count-num');
+        if (count > 0) { heroNum.textContent = count; heroBadge.classList.remove('hidden'); }
+
+        // form count
+        var formCount = document.getElementById('form-reg-count');
+        if (count > 0) {
+          formCount.textContent = count + ' classmate' + (count === 1 ? ' has' : 's have') + ' already registered.';
+          formCount.classList.remove('hidden');
+        }
+
+        // who's coming section
+        var countEl = document.getElementById('whos-coming-count');
+        var listEl = document.getElementById('whos-coming-list');
+        var emptyEl = document.getElementById('whos-coming-empty');
+        if (count === 0) {
+          countEl.textContent = '';
+          emptyEl.classList.remove('hidden');
+          listEl.innerHTML = '';
+        } else {
+          countEl.textContent = count + ' classmate' + (count === 1 ? '' : 's') + ' registered';
+          emptyEl.classList.add('hidden');
+          listEl.innerHTML = list.map(function(p) {
+            var commentHtml = p.comment
+              ? '<p class="text-sm text-[#6B6B6B] mt-1 leading-relaxed">“' + escHtml(p.comment) + '”</p>'
+              : '';
+            return '<div class="flex items-start gap-4 p-4 bg-[#F8F7F4] rounded-lg border border-[#E0DDDA]">'
+              + '<div class="w-10 h-10 rounded-full bg-[#A51C30]/10 border border-[#A51C30]/20 flex items-center justify-center shrink-0">'
+              + '<span style="font-family:\'EB Garamond\',Georgia,serif; font-size:1.1rem; color:#A51C30; font-weight:500;">' + escHtml(p.name.charAt(0)) + '</span>'
+              + '</div>'
+              + '<div class="min-w-0"><p class="font-medium text-sm">' + escHtml(p.name) + '</p>' + commentHtml + '</div>'
+              + '</div>';
+          }).join('');
+        }
+      } catch(e) {}
+    }
+
+    function escHtml(s) {
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    loadRegistrants();
   </script>
 
 </body>
