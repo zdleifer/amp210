@@ -1,6 +1,6 @@
 export async function onRequestGet(context) {
   try {
-    const url = `https://api.airtable.com/v0/appIvQCZHBkJbOn0e/tbl5lGtohdFApVFeY?fields%5B%5D=First+Name&fields%5B%5D=Last+Name&fields%5B%5D=Comment&sort%5B0%5D%5Bfield%5D=Created&sort%5B0%5D%5Bdirection%5D=asc`;
+    const url = `https://api.airtable.com/v0/appIvQCZHBkJbOn0e/tbl5lGtohdFApVFeY?fields%5B%5D=First+Name&fields%5B%5D=Last+Name&fields%5B%5D=Comment`;
     const res = await fetch(url, {
       headers: { 'Authorization': `Bearer ${context.env.AIRTABLE_TOKEN}` },
     });
