@@ -1242,7 +1242,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
 
         // nav badge (only above 10)
         var navBadge = document.getElementById('nav-count-badge');
-        if (count > 10) { navBadge.textContent = count; navBadge.classList.remove('hidden'); }
+        if (count > 0) { navBadge.textContent = count; navBadge.classList.remove('hidden'); }
 
         // hero badge
         var heroBadge = document.getElementById('hero-reg-count');
@@ -1251,7 +1251,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
 
         // form count (only above 10)
         var formCount = document.getElementById('form-reg-count');
-        if (count > 10) {
+        if (count > 0) {
           formCount.textContent = count + ' classmates have already registered.';
           formCount.classList.remove('hidden');
         }
