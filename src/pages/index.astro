@@ -67,7 +67,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         <a href="#gallery" class="hover:text-[#A51C30] transition-colors">Gallery</a>
         <a href="#cost" class="hover:text-[#A51C30] transition-colors">Cost</a>
         <a href="#flights" class="hover:text-[#A51C30] transition-colors">Flights</a>
-        <a href="#whos-coming" class="hover:text-[#A51C30] transition-colors">Who's Coming</a>
+        <a href="#whos-coming" class="hover:text-[#A51C30] transition-colors flex items-center gap-1.5">Who's Coming<span id="nav-count-badge" class="hidden px-2 py-0.5 rounded-full bg-[#A51C30] text-white text-xs font-medium leading-none"></span></a>
         <a href="#register" class="ml-2 px-5 py-2 bg-[#A51C30] text-white rounded hover:bg-[#7a1424] transition-colors">Register</a>
       </nav>
       <!-- Mobile: hamburger + register -->
@@ -1239,6 +1239,10 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         var d = await r.json();
         var count = d.count || 0;
         var list = d.registrants || [];
+
+        // nav badge (only above 10)
+        var navBadge = document.getElementById('nav-count-badge');
+        if (count > 10) { navBadge.textContent = count; navBadge.classList.remove('hidden'); }
 
         // hero badge
         var heroBadge = document.getElementById('hero-reg-count');
