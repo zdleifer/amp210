@@ -52,6 +52,44 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
       from { opacity: 0; transform: translateY(8px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+    @media (max-width: 600px) {
+      #whos-coming-list, #whos-coming-empty > div {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    .wc-card {
+      display: flex; align-items: center; gap: 16px;
+      background: white; border: 1px solid #e8e5e0; border-radius: 10px;
+      padding: 18px 22px;
+      animation: fadeUp 0.4s ease both;
+    }
+    .wc-avatar {
+      width: 52px; height: 52px; flex: 0 0 52px;
+      border-radius: 50%; background: #8B1A1A;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .wc-initial {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 22px; font-weight: 500; color: white; line-height: 1;
+    }
+    .wc-content { min-width: 0; flex: 1; }
+    .wc-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 20px; font-weight: 500; color: #1a1a1a;
+      margin: 0; letter-spacing: 0.01em; line-height: 1.2;
+    }
+    .wc-badge {
+      font-family: 'Helvetica Neue', Helvetica, sans-serif;
+      font-size: 10px; font-weight: 700; color: #8B1A1A;
+      letter-spacing: 0.12em; margin-left: 8px; vertical-align: middle;
+    }
+    .wc-quote {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 14px; font-style: italic; color: oklch(52% 0.015 30);
+      margin: 5px 0 0; line-height: 1.4;
+      overflow: hidden; display: -webkit-box;
+      -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+    }
   </style>
 </head>
 
@@ -84,6 +122,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
       </nav>
       <!-- Mobile: hamburger + register -->
       <div class="md:hidden flex items-center gap-3">
+        <a href="#whos-coming" id="mobile-count-badge" class="hidden items-center gap-1.5 text-sm font-medium text-[#1C1C1C] hover:text-[#A51C30] transition-colors"><span id="mobile-count-num"></span><span class="text-[#A51C30]">attending</span></a>
         <a href="#register" class="px-4 py-2 bg-[#A51C30] text-white text-sm font-medium rounded">Register</a>
         <button id="nav-toggle" onclick="toggleMobileNav()" aria-label="Menu" class="p-1">
           <svg id="icon-open" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -1087,24 +1126,20 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
       <div style="width:40px; height:2px; background:#8B1A1A; margin:0 auto 32px;"></div>
       <p id="whos-coming-count" style="font-family:'Helvetica Neue',Helvetica,sans-serif; font-size:15px; color:oklch(45% 0.01 60); letter-spacing:0.04em; margin:0; animation:countUp 0.6s ease both;"></p>
     </div>
-    <!-- Chip grid -->
-    <div id="whos-coming-list" style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; gap:10px; justify-content:center;"></div>
+    <!-- Card grid -->
+    <div id="whos-coming-list" style="max-width:860px; margin:0 auto; display:grid; grid-template-columns:repeat(2,1fr); gap:14px;"></div>
     <!-- Empty state -->
     <div id="whos-coming-empty">
-      <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
-        <!-- 12 ghost chips -->
-        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:60px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
-        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:80px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
-        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:70px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
-        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:90px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
-        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:65px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
-        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:75px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
-        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:85px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
-        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:68px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
-        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:78px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
-        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:72px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
-        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:88px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
-        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:62px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
+      <div style="max-width:860px; margin:0 auto; display:grid; grid-template-columns:repeat(2,1fr); gap:14px;">
+        <!-- 8 ghost cards -->
+        <div style="display:flex;align-items:center;gap:16px;background:white;border:1px solid #e8e5e0;border-radius:10px;padding:18px 22px;opacity:0.35;"><div style="width:52px;height:52px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div><div style="height:16px;width:90px;background:oklch(88% 0.005 60);border-radius:3px;margin-bottom:8px;"></div><div style="height:11px;width:130px;background:oklch(90% 0.005 60);border-radius:3px;"></div></div></div>
+        <div style="display:flex;align-items:center;gap:16px;background:white;border:1px solid #e8e5e0;border-radius:10px;padding:18px 22px;opacity:0.35;"><div style="width:52px;height:52px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div><div style="height:16px;width:110px;background:oklch(88% 0.005 60);border-radius:3px;"></div></div></div>
+        <div style="display:flex;align-items:center;gap:16px;background:white;border:1px solid #e8e5e0;border-radius:10px;padding:18px 22px;opacity:0.35;"><div style="width:52px;height:52px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div><div style="height:16px;width:80px;background:oklch(88% 0.005 60);border-radius:3px;margin-bottom:8px;"></div><div style="height:11px;width:150px;background:oklch(90% 0.005 60);border-radius:3px;"></div></div></div>
+        <div style="display:flex;align-items:center;gap:16px;background:white;border:1px solid #e8e5e0;border-radius:10px;padding:18px 22px;opacity:0.35;"><div style="width:52px;height:52px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div><div style="height:16px;width:100px;background:oklch(88% 0.005 60);border-radius:3px;"></div></div></div>
+        <div style="display:flex;align-items:center;gap:16px;background:white;border:1px solid #e8e5e0;border-radius:10px;padding:18px 22px;opacity:0.35;"><div style="width:52px;height:52px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div><div style="height:16px;width:95px;background:oklch(88% 0.005 60);border-radius:3px;margin-bottom:8px;"></div><div style="height:11px;width:120px;background:oklch(90% 0.005 60);border-radius:3px;"></div></div></div>
+        <div style="display:flex;align-items:center;gap:16px;background:white;border:1px solid #e8e5e0;border-radius:10px;padding:18px 22px;opacity:0.35;"><div style="width:52px;height:52px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div><div style="height:16px;width:85px;background:oklch(88% 0.005 60);border-radius:3px;"></div></div></div>
+        <div style="display:flex;align-items:center;gap:16px;background:white;border:1px solid #e8e5e0;border-radius:10px;padding:18px 22px;opacity:0.35;"><div style="width:52px;height:52px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div><div style="height:16px;width:105px;background:oklch(88% 0.005 60);border-radius:3px;margin-bottom:8px;"></div><div style="height:11px;width:140px;background:oklch(90% 0.005 60);border-radius:3px;"></div></div></div>
+        <div style="display:flex;align-items:center;gap:16px;background:white;border:1px solid #e8e5e0;border-radius:10px;padding:18px 22px;opacity:0.35;"><div style="width:52px;height:52px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div><div style="height:16px;width:75px;background:oklch(88% 0.005 60);border-radius:3px;"></div></div></div>
       </div>
       <p style="text-align:center; margin:40px 0 0; font-family:'Helvetica Neue',Helvetica,sans-serif; font-size:14px; color:oklch(55% 0.01 60); letter-spacing:0.05em;">No registrations yet — be the first.</p>
     </div>
@@ -1268,9 +1303,14 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         var count = d.count || 0;
         var list = d.registrants || [];
 
-        // nav badge (only above 10)
+        // nav badge (desktop)
         var navBadge = document.getElementById('nav-count-badge');
         if (count > 0) { navBadge.textContent = count; navBadge.classList.remove('hidden'); }
+
+        // mobile count badge
+        var mobileBadge = document.getElementById('mobile-count-badge');
+        var mobileNum = document.getElementById('mobile-count-num');
+        if (count > 0) { mobileNum.textContent = count; mobileBadge.classList.remove('hidden'); mobileBadge.classList.add('flex'); }
 
         // hero badge
         var heroBadge = document.getElementById('hero-reg-count');
@@ -1295,23 +1335,79 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         } else {
           countEl.textContent = count + ' classmate' + (count === 1 ? '' : 's') + ' registered';
           emptyEl.style.display = 'none';
-          listEl.innerHTML = list.map(function(p, i) {
-            var badgeHtml = p.withGuest
-              ? '<span style=”font-family:\'Helvetica Neue\',Helvetica,sans-serif;font-size:10px;font-weight:700;color:#8B1A1A;letter-spacing:0.1em;margin-left:6px;vertical-align:middle;”>+1</span>'
-              : '';
-            var quoteHtml = p.comment
-              ? '<p style=”font-family:\'Cormorant Garamond\',Georgia,serif;font-size:12px;font-style:italic;color:oklch(52% 0.01 60);margin:1px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px;”>”' + escHtml(p.comment) + '”</p>'
-              : '';
-            return '<div style=”display:flex;align-items:center;gap:10px;background:white;border:1px solid oklch(90% 0.008 60);border-radius:4px;padding:8px 16px 8px 8px;width:220px;flex-shrink:0;animation:fadeUp 0.4s ease both;animation-delay:' + (i * 60) + 'ms;”>'
-              + '<div style=”width:36px;height:36px;flex-shrink:0;border-radius:50%;background:#8B1A1A;display:flex;align-items:center;justify-content:center;”>'
-              + '<span style=”font-family:\'Cormorant Garamond\',Georgia,serif;font-size:17px;font-weight:500;color:white;line-height:1;”>' + escHtml(p.name.charAt(0)) + '</span>'
-              + '</div>'
-              + '<div style=”min-width:0;”>'
-              + '<p style=”font-family:\'Cormorant Garamond\',Georgia,serif;font-size:17px;font-weight:500;color:#1a1a1a;margin:0;white-space:nowrap;letter-spacing:0.01em;”>' + escHtml(p.name) + badgeHtml + '</p>'
-              + quoteHtml
-              + '</div>'
-              + '</div>';
-          }).join('');
+          listEl.innerHTML = '';
+          list.forEach(function(p, i) {
+            var card = document.createElement('div');
+            card.style.cssText = 'display:flex;align-items:center;gap:16px;background:white;border:1px solid #e8e5e0;border-radius:10px;padding:18px 22px;animation:fadeUp 0.4s ease both';
+            card.style.animationDelay = (i * 60) + 'ms';
+
+            var avatar = document.createElement('div');
+            avatar.style.width = '52px';
+            avatar.style.height = '52px';
+            avatar.style.flex = '0 0 52px';
+            avatar.style.borderRadius = '50%';
+            avatar.style.background = '#8B1A1A';
+            avatar.style.display = 'flex';
+            avatar.style.alignItems = 'center';
+            avatar.style.justifyContent = 'center';
+
+            var ini = document.createElement('span');
+            ini.style.fontFamily = 'Cormorant Garamond, Georgia, serif';
+            ini.style.fontSize = '22px';
+            ini.style.fontWeight = '500';
+            ini.style.color = 'white';
+            ini.style.lineHeight = '1';
+            ini.textContent = p.name.charAt(0);
+            avatar.appendChild(ini);
+
+            var content = document.createElement('div');
+            content.style.minWidth = '0';
+            content.style.flex = '1';
+
+            var nameEl = document.createElement('p');
+            nameEl.style.fontFamily = 'Cormorant Garamond, Georgia, serif';
+            nameEl.style.fontSize = '20px';
+            nameEl.style.fontWeight = '500';
+            nameEl.style.color = '#1a1a1a';
+            nameEl.style.margin = '0';
+            nameEl.style.letterSpacing = '0.01em';
+            nameEl.style.lineHeight = '1.2';
+            nameEl.appendChild(document.createTextNode(p.name));
+
+            if (p.withGuest) {
+              var badge = document.createElement('span');
+              badge.style.fontFamily = 'Helvetica Neue, Helvetica, sans-serif';
+              badge.style.fontSize = '10px';
+              badge.style.fontWeight = '700';
+              badge.style.color = '#8B1A1A';
+              badge.style.letterSpacing = '0.12em';
+              badge.style.marginLeft = '8px';
+              badge.style.verticalAlign = 'middle';
+              badge.textContent = '+1';
+              nameEl.appendChild(badge);
+            }
+            content.appendChild(nameEl);
+
+            if (p.comment) {
+              var quoteEl = document.createElement('p');
+              quoteEl.style.fontFamily = 'Cormorant Garamond, Georgia, serif';
+              quoteEl.style.fontSize = '14px';
+              quoteEl.style.fontStyle = 'italic';
+              quoteEl.style.color = 'oklch(52% 0.015 30)';
+              quoteEl.style.margin = '5px 0 0';
+              quoteEl.style.lineHeight = '1.4';
+              quoteEl.style.overflow = 'hidden';
+              quoteEl.style.display = '-webkit-box';
+              quoteEl.style.setProperty('-webkit-line-clamp', '2');
+              quoteEl.style.setProperty('-webkit-box-orient', 'vertical');
+              quoteEl.textContent = '“' + p.comment + '”';
+              content.appendChild(quoteEl);
+            }
+
+            card.appendChild(avatar);
+            card.appendChild(content);
+            listEl.appendChild(card);
+          });
         }
       } catch(e) {}
     }
