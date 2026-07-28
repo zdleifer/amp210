@@ -6,8 +6,8 @@ export async function onRequestGet(context) {
     );
     const body = await res.text();
     if (!res.ok) {
-      return new Response(JSON.stringify({ error: 'Airtable error', detail: body }), {
-        status: 502, headers: { 'Content-Type': 'application/json' },
+      return new Response(JSON.stringify({ error: 'Airtable error', status: res.status, detail: body }), {
+        status: 200, headers: { 'Content-Type': 'application/json' },
       });
     }
     const data = JSON.parse(body);
