@@ -14,6 +14,7 @@ export async function onRequestGet(context) {
     const registrants = (data.records || []).map(r => ({
       name: `${(r.fields['First Name'] || '').charAt(0).toUpperCase()}. ${r.fields['Last Name'] || ''}`.trim(),
       comment: r.fields['Comment'] || '',
+      withGuest: (r.fields['Attending'] || '').includes('Guest'),
     }));
     return new Response(JSON.stringify({ count: registrants.length, registrants }), {
       status: 200,

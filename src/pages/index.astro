@@ -13,6 +13,9 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
   <meta name="description" content={description} />
   <link rel="icon" href="/favicon.ico" />
 
+  <!-- Cormorant Garamond -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EZKB87TNLK"></script>
   <script is:inline>
@@ -40,6 +43,15 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
 
     .day-photo { width:100%; aspect-ratio:16/9; object-fit:cover; cursor:pointer; }
     .day-photo:hover { opacity:0.92; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 
@@ -1067,18 +1079,34 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
   </section>
 
   <!-- WHO'S COMING -->
-  <section id="whos-coming" class="py-20 px-6 bg-white">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-10">
-        <p class="section-label mb-3">AMP 210</p>
-        <h2 style="font-family:'EB Garamond',Georgia,serif; font-size:clamp(1rem,4vw,2.8rem); font-weight:400; line-height:1.2;">
-          Who's Coming
-        </h2>
-        <div class="divider mt-4 mx-auto"></div>
-        <p id="whos-coming-count" class="text-[#6B6B6B] text-sm mt-4"></p>
+  <section id="whos-coming" style="background:oklch(98.5% 0.006 60); padding:100px 40px 120px;">
+    <!-- Header -->
+    <div style="text-align:center; margin-bottom:56px;">
+      <p style="font-family:'Helvetica Neue',Helvetica,sans-serif; font-size:11px; font-weight:700; letter-spacing:0.2em; color:#8B1A1A; text-transform:uppercase; margin:0 0 16px;">AMP 210</p>
+      <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(48px,6vw,80px); font-weight:400; color:#1a1a1a; margin:0 0 28px; line-height:1;">Who's Coming</h2>
+      <div style="width:40px; height:2px; background:#8B1A1A; margin:0 auto 32px;"></div>
+      <p id="whos-coming-count" style="font-family:'Helvetica Neue',Helvetica,sans-serif; font-size:15px; color:oklch(45% 0.01 60); letter-spacing:0.04em; margin:0; animation:countUp 0.6s ease both;"></p>
+    </div>
+    <!-- Chip grid -->
+    <div id="whos-coming-list" style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; gap:10px; justify-content:center;"></div>
+    <!-- Empty state -->
+    <div id="whos-coming-empty">
+      <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+        <!-- 12 ghost chips -->
+        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:60px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:80px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:70px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:90px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:65px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:75px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:85px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:68px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:78px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:72px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:88px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
+        <div style="display:flex;align-items:center;gap:10px;background:white;border:1px solid #e8e5e0;border-radius:4px;padding:8px 20px 8px 8px;opacity:0.3;width:220px;flex-shrink:0;"><div style="width:36px;height:36px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div style="height:14px;width:62px;background:oklch(88% 0.005 60);border-radius:2px;"></div></div>
       </div>
-      <div id="whos-coming-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-      <p id="whos-coming-empty" class="text-center text-[#6B6B6B] text-sm py-8">No registrations yet. Be the first!</p>
+      <p style="text-align:center; margin:40px 0 0; font-family:'Helvetica Neue',Helvetica,sans-serif; font-size:14px; color:oklch(55% 0.01 60); letter-spacing:0.05em;">No registrations yet — be the first.</p>
     </div>
   </section>
 
@@ -1262,20 +1290,26 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         var emptyEl = document.getElementById('whos-coming-empty');
         if (count === 0) {
           countEl.textContent = '';
-          emptyEl.classList.remove('hidden');
+          emptyEl.style.display = '';
           listEl.innerHTML = '';
         } else {
           countEl.textContent = count + ' classmate' + (count === 1 ? '' : 's') + ' registered';
-          emptyEl.classList.add('hidden');
-          listEl.innerHTML = list.map(function(p) {
-            var commentHtml = p.comment
-              ? '<p class=”text-sm text-[#6B6B6B] mt-1 leading-relaxed”>”' + escHtml(p.comment) + '”</p>'
+          emptyEl.style.display = 'none';
+          listEl.innerHTML = list.map(function(p, i) {
+            var badgeHtml = p.withGuest
+              ? '<span style=”font-family:\'Helvetica Neue\',Helvetica,sans-serif;font-size:10px;font-weight:700;color:#8B1A1A;letter-spacing:0.1em;margin-left:6px;vertical-align:middle;”>+1</span>'
               : '';
-            return '<div class=”flex items-start gap-4 p-4 bg-[#F8F7F4] rounded-lg border border-[#E0DDDA]”>'
-              + '<div class=”w-10 h-10 rounded-full bg-[#A51C30]/10 border border-[#A51C30]/20 flex items-center justify-center shrink-0”>'
-              + '<span style=”font-family:\'EB Garamond\',Georgia,serif;font-size:1.1rem;color:#A51C30;font-weight:500;”>' + escHtml(p.name.charAt(0)) + '</span>'
+            var quoteHtml = p.comment
+              ? '<p style=”font-family:\'Cormorant Garamond\',Georgia,serif;font-size:12px;font-style:italic;color:oklch(52% 0.01 60);margin:1px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px;”>”' + escHtml(p.comment) + '”</p>'
+              : '';
+            return '<div style=”display:flex;align-items:center;gap:10px;background:white;border:1px solid oklch(90% 0.008 60);border-radius:4px;padding:8px 16px 8px 8px;width:220px;flex-shrink:0;animation:fadeUp 0.4s ease both;animation-delay:' + (i * 60) + 'ms;”>'
+              + '<div style=”width:36px;height:36px;flex-shrink:0;border-radius:50%;background:#8B1A1A;display:flex;align-items:center;justify-content:center;”>'
+              + '<span style=”font-family:\'Cormorant Garamond\',Georgia,serif;font-size:17px;font-weight:500;color:white;line-height:1;”>' + escHtml(p.name.charAt(0)) + '</span>'
               + '</div>'
-              + '<div class=”min-w-0”><p class=”font-medium text-sm”>' + escHtml(p.name) + '</p>' + commentHtml + '</div>'
+              + '<div style=”min-width:0;”>'
+              + '<p style=”font-family:\'Cormorant Garamond\',Georgia,serif;font-size:17px;font-weight:500;color:#1a1a1a;margin:0;white-space:nowrap;letter-spacing:0.01em;”>' + escHtml(p.name) + badgeHtml + '</p>'
+              + quoteHtml
+              + '</div>'
               + '</div>';
           }).join('');
         }
@@ -1288,12 +1322,12 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
 
     if (location.hostname === 'localhost') {
       var mockData = { count: 6, registrants: [
-        { name: 'S. Gandhi', comment: 'Cannot wait to be back together!' },
-        { name: 'S. Wong', comment: '' },
-        { name: 'Z. Leifer', comment: 'Ready to rock and roll...' },
-        { name: 'A. Patel', comment: '' },
-        { name: 'M. Chen', comment: 'Istanbul here we come' },
-        { name: 'J. Smith', comment: '' },
+        { name: 'S. Gandhi', comment: 'Cannot wait to be back together!', withGuest: false },
+        { name: 'S. Wong', comment: '', withGuest: false },
+        { name: 'Z. Leifer', comment: 'Ready to rock and roll...', withGuest: true },
+        { name: 'A. Patel', comment: 'Istanbul here we come!', withGuest: false },
+        { name: 'M. Chen', comment: '', withGuest: true },
+        { name: 'J. Smith', comment: '', withGuest: false },
       ]};
       var _origFetch = window.fetch;
       window.fetch = function(url) {
