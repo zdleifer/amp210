@@ -1361,7 +1361,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         // form count (only above 10)
         var formCount = document.getElementById('form-reg-count');
         if (count > 0) {
-          formCount.textContent = count + ' classmates have already registered.';
+          formCount.textContent = count + ' people attending so far.';
           formCount.classList.remove('hidden');
         }
 
@@ -1374,7 +1374,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
           emptyEl.style.display = '';
           listEl.innerHTML = '';
         } else {
-          countEl.textContent = count + ' classmate' + (count === 1 ? '' : 's') + ' registered';
+          countEl.textContent = count + ' attending';
           emptyEl.style.display = 'none';
           listEl.innerHTML = '';
           list.forEach(function(p, i) {
@@ -1458,13 +1458,13 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
     }
 
     if (location.hostname === 'localhost') {
-      var mockData = { count: 6, registrants: [
-        { name: 'S. Gandhi', comment: 'Cannot wait to be back together!', withGuest: false },
-        { name: 'S. Wong', comment: '', withGuest: false },
-        { name: 'Z. Leifer', comment: 'Ready to rock and roll...', withGuest: true },
-        { name: 'A. Patel', comment: 'Istanbul here we come!', withGuest: false },
-        { name: 'M. Chen', comment: '', withGuest: true },
-        { name: 'J. Smith', comment: '', withGuest: false },
+      var mockData = { count: 8, registrants: [
+        { name: 'Sanjay G.', comment: 'Cannot wait to be back together!', withGuest: false },
+        { name: 'Sarah W.', comment: '', withGuest: false },
+        { name: 'Zack L.', comment: 'Ready to rock and roll...', withGuest: true },
+        { name: 'Anita P.', comment: 'Istanbul here we come!', withGuest: false },
+        { name: 'Michael C.', comment: '', withGuest: true },
+        { name: 'James S.', comment: '', withGuest: false },
       ]};
       var _origFetch = window.fetch;
       window.fetch = function(url) {

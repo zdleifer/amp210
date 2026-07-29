@@ -12,11 +12,12 @@ export async function onRequestGet(context) {
     }
     const data = JSON.parse(body);
     const registrants = (data.records || []).map(r => ({
-      name: `${(r.fields['First Name'] || '').charAt(0).toUpperCase()}. ${r.fields['Last Name'] || ''}`.trim(),
+      name: `${r.fields['First Name'] || ''} ${((r.fields['Last Name'] || '').charAt(0).toUpperCase() + '.').trim()}`.trim(),
       comment: r.fields['Comment'] || '',
       withGuest: (r.fields['Attending'] || '').includes('Guest'),
     }));
-    return new Response(JSON.stringify({ count: registrants.length, registrants }), {
+    const totalAttendees = registrants.reduce((sum, r) => sum + 1 + (r.withGuest ? 1 : 0), 0);
+    return new Response(JSON.stringify({ count: totalAttendees, registrants }), {
       status: 200,
       headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' },
     });
