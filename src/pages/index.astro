@@ -1,4 +1,4 @@
----
+﻿---
 import '../styles/global.css';
 const title = "AMP 210 Istanbul Reunion | October 22–25, 2026";
 const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Register by August 7.";
@@ -117,6 +117,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         <a href="#gallery" class="hover:text-[#A51C30] transition-colors">Gallery</a>
         <a href="#cost" class="hover:text-[#A51C30] transition-colors">Cost</a>
         <a href="#flights" class="hover:text-[#A51C30] transition-colors">Flights</a>
+        <a href="#faq" class="hover:text-[#A51C30] transition-colors">FAQ</a>
         <a href="#whos-coming" class="hover:text-[#A51C30] transition-colors flex items-center gap-1.5">Who's Coming<span id="nav-count-badge" class="hidden px-2 py-0.5 rounded-full bg-[#A51C30] text-white text-xs font-medium leading-none"></span></a>
         <a href="#register" class="ml-2 px-5 py-2 bg-[#A51C30] text-white rounded hover:bg-[#7a1424] transition-colors">Register</a>
       </nav>
@@ -145,6 +146,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
       <a href="#gallery" onclick="closeMobileNav()" class="px-6 py-4 text-base font-medium border-b border-[#E0DDDA] hover:bg-[#F8F7F4] hover:text-[#A51C30] transition-colors">Gallery</a>
       <a href="#cost" onclick="closeMobileNav()" class="px-6 py-4 text-base font-medium border-b border-[#E0DDDA] hover:bg-[#F8F7F4] hover:text-[#A51C30] transition-colors">Cost</a>
       <a href="#flights" onclick="closeMobileNav()" class="px-6 py-4 text-base font-medium border-b border-[#E0DDDA] hover:bg-[#F8F7F4] hover:text-[#A51C30] transition-colors">Flights</a>
+      <a href="#faq" onclick="closeMobileNav()" class="px-6 py-4 text-base font-medium border-b border-[#E0DDDA] hover:bg-[#F8F7F4] hover:text-[#A51C30] transition-colors">FAQ</a>
       <a href="#whos-coming" onclick="closeMobileNav()" class="px-6 py-4 text-base font-medium border-b border-[#E0DDDA] hover:bg-[#F8F7F4] hover:text-[#A51C30] transition-colors">Who's Coming</a>
       <div class="px-6 py-4">
         <a href="#register" onclick="closeMobileNav()" class="block w-full py-3 bg-[#A51C30] text-white text-base font-medium rounded text-center hover:bg-[#7a1424] transition-colors">Register Now</a>
@@ -1096,17 +1098,17 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
       var faqs = [
         { q: "What's included in the package price?", a: "The package covers 3 nights at Swissôtel The Bosphorus (bed and breakfast, Oct 22–25), a private Bosphorus yacht tour, keynote sessions at TSKB, a historical Istanbul tour, the Celebration Dinner at Frankie Galataport, all group lunches, all group transfers during the program, and an AMP 210 commemorative T-shirt." },
         { q: "What's not included?", a: "Flights, airport transfers to/from the hotel, and any personal expenses outside the group program." },
-        { q: "How and when do I pay?", a: "Register by August 7, 2026. After the deadline, you’ll receive a personalized payment link based on your room choice — single room (€1,923.83) or double room with guest (€2,895.28 for both)." },
+        { q: "How and when do I pay?", a: "Register by August 7, 2026. After the deadline, you’ll receive a personalized payment link based on your room choice: single room (€1,923.83) or double room with guest (€2,895.28 for both)." },
         { q: "Can I bring a guest?", a: "Yes. Select “Attending with Guest” when you register. The guest package covers their hotel room (double occupancy) and full participation in all group activities for the same total price of €2,895.28." },
-        { q: "Does my guest pay the same rate?", a: "The €2,895.28 price covers both of you — it’s not a per-person rate. You pay one amount for the pair, which includes the double room and two program spots." },
+        { q: "Does my guest pay the same rate?", a: "The €2,895.28 price covers both of you. It is not a per-person rate. You pay one amount for the pair, which includes the double room and two program spots." },
         { q: "What’s the Turkish Airlines discount?", a: "An exclusive 30% discount on base fare is available to AMP 210 registrants across all cabin classes. Taxes and surcharges are not discounted. Your promo code will be emailed to you upon registration." },
-        { q: "Which airport should I fly into?", a: "Istanbul Airport (IST) is the main international gateway and closest to the Swissôtel. Sabiha Gökçen (SAW) on the Asian side is significantly further — IST is strongly preferred." },
+        { q: "Which airport should I fly into?", a: "Istanbul Airport (IST) is the main international gateway and closest to the Swissôtel. Sabiha Gökçen (SAW) on the Asian side is significantly further. IST is strongly preferred." },
         { q: "Can I arrive early or stay later than the program dates?", a: "Absolutely. The Swissôtel is holding rooms at the group rate for a limited window before and after the program. Contact the hotel directly and mention the AMP 210 block to extend your stay." },
-        { q: "What if I arrive late on Thursday?", a: "No problem — Thursday evening is unstructured. There are no group activities that day, so you won’t miss anything. Attendees typically arrange informal dinners among themselves. The program begins Friday morning." },
+        { q: "What if I arrive late on Thursday?", a: "No problem. Thursday evening is unstructured. There are no group activities that day, so you won’t miss anything. Attendees typically arrange informal dinners among themselves. The program begins Friday morning." },
         { q: "What’s the dress code for the Celebration Dinner?", a: "Smart casual to business casual. The dinner is at Frankie Galataport, one of Istanbul’s most celebrated restaurants, so dress accordingly." },
         { q: "What if I have dietary restrictions?", a: "We are arranging vegetarian options across all group meals. For other dietary requirements, please note them in the comment field when you register and we’ll do our best to accommodate." },
         { q: "Is there a cancellation or refund policy?", a: "Payment details and cancellation terms will be communicated with your payment link after August 7. If you have concerns about attending, reach out before registering." },
-        { q: "How are the professors' costs covered?", a: "Airline costs for our professors are covered in full. Reunion package costs will be split equally among attendees — the exact amount will be confirmed and communicated in due course." },
+        { q: "How are the professors' costs covered?", a: "All professor costs are covered in full and will be split equally among AMP 210 attendees. Final amount to be confirmed." },
         { q: "Who do I contact if I have questions?", a: "Please contact the customer service team via WhatsApp at +90 212 284 63 63." }
       ];
 
@@ -1179,7 +1181,7 @@ const description = "AMP 210 gathers in Istanbul, October 22–25, 2026. Registe
         <div style="display:flex;align-items:center;gap:16px;background:white;border:1px solid #e8e5e0;border-radius:10px;padding:18px 22px;opacity:0.35;"><div style="width:52px;height:52px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div><div style="height:16px;width:105px;background:oklch(88% 0.005 60);border-radius:3px;margin-bottom:8px;"></div><div style="height:11px;width:140px;background:oklch(90% 0.005 60);border-radius:3px;"></div></div></div>
         <div style="display:flex;align-items:center;gap:16px;background:white;border:1px solid #e8e5e0;border-radius:10px;padding:18px 22px;opacity:0.35;"><div style="width:52px;height:52px;flex-shrink:0;border-radius:50%;background:oklch(85% 0.005 60);"></div><div><div style="height:16px;width:75px;background:oklch(88% 0.005 60);border-radius:3px;"></div></div></div>
       </div>
-      <p style="text-align:center; margin:40px 0 0; font-family:'Helvetica Neue',Helvetica,sans-serif; font-size:14px; color:oklch(55% 0.01 60); letter-spacing:0.05em;">No registrations yet — be the first.</p>
+      <p style="text-align:center; margin:40px 0 0; font-family:'Helvetica Neue',Helvetica,sans-serif; font-size:14px; color:oklch(55% 0.01 60); letter-spacing:0.05em;">No registrations yet. Be the first.</p>
     </div>
   </section>
 
